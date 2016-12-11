@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var request = require('request');
 
 // prepare server
 //app.use('/api', api); // redirect API calls
@@ -11,7 +12,17 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 // ACAAAAAAAAAAAAAAAAAA
 app.get('/liz', function (req, res) {
-  res.send('hello world')
+
+	var bodyResponse = '';	
+	request('https://api.airbnb.com/v2/search_results?client_id=3092nxybyb0otqw18e8nh5nty', function (error, response, body) {
+		console.log(error);
+	  if (!error && response.statusCode == 200) {
+	  		console.log(body);
+		    bodyResponse = body // Show the HTML for the Google homepage.
+		    res.send(bodyResponse);
+		  }
+	});
+    
 })
 
 // ACAAAAAAAAAAAAAAAAAA FIN

@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/LizRuelas/airbnb#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "bootstrap": "^3.3.7",
