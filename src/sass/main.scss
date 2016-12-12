@@ -13,6 +13,12 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.header__menu {
+	border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
 .header__logo {
 	width: 1.3em;
 }
@@ -22,7 +28,29 @@ body {
 }
 
 .header__text {
-	top: 10rem;
+	top: 7rem;
     left: 15rem;
 	position: absolute;
+}
+
+.header__h1 {
+	font-size: 3.2em;
+    font-weight: 900;
+    color: #484848;	
+}
+
+.header__p {
+	font-size: 1.2em;
+    margin-top: 2%;
+    font-family: sans-serif;
+    color: #7D7D7D;	
+}
+
+.header__last_news {
+	border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 12px;
+    margin-top: 13px;
+    color: #484848;
+    display: inline-block;
 }
