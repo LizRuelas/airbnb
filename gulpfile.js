@@ -17,9 +17,8 @@ var gulp = require("gulp"),
     gulp.task("devcss", function(){
         gulp.src([
             "node_modules/bootstrap/dist/css/*.min.css",
-            "src/sass/*.scss",
-            "src/css/*.css"
-            ])
+            "src/css/*.min.css",
+            "src/sass/*.scss"])
         .pipe(sass().on('error', sass.logError))
         .pipe(concat("main.css"))
         .pipe(cleanCSS({compatibility: 'ie8'}))
