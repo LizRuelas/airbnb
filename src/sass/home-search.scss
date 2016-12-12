@@ -1,5 +1,7 @@
 /****VARIABLES****/
 $color-border: #dce0e0;
+$color-bnb: #FF5A5F;
+$color-blanco: #fff;
 
 /****MIXIN****/
 @mixin search-borde($tam, $color, $tam-r){
@@ -23,23 +25,27 @@ $color-border: #dce0e0;
 .search__place, .search__date{
 	border-right: 1px solid $color-border;
 }
-.search__btn{
-	background-color: #FF5A5F;
-	color: #fff;
+.search__btn, .search__modal__btn{
+	background-color: $color-bnb;
+	color: $color-blanco;
 }
 .search__container span{display: inline-block;}
 .search__place input{width: 100%;}
 .search__date input{width: 90px;}
-.search__container input{
+.search__container input, .search__mini input{
 	border: none;
     font-size: 19px;
 }
 .search__mini{
 	@include search-borde(1px, $color-border, 5px);
 	padding: 2%;
+	margin: 2% 0%;
 }
 .search__btn__big{
 	width: 100%;
-    background-color: #fff;
     border: none;
+    background: transparent;
+}
+.search__modal__btn{
+	margin: 2% 0%;
 }
