@@ -5,22 +5,41 @@ $color-border: #dce0e0;
 @mixin search-borde($tam, $color, $tam-r){
 	border: $tam solid $color;
 	border-radius: $tam-r;
-	display: flex;
 }
 @mixin search-menu($p1, $p2, $p3){
 	display: inline-block;
 	padding: 15px 16px 8px;
-	width: 33%;
+	width: 32%;
 }
 /*********************************/
 .search__container{
 	@include search-borde(1px, $color-border, 5px);
+	display: flex;
+	margin: 2% 0%;
 }
 .search__place, .search__date, .search__go{
 	@include search-menu(15px, 16px, 8px);
+}
+.search__place, .search__date{
+	border-right: 1px solid $color-border;
 }
 .search__btn{
 	background-color: #FF5A5F;
 	color: #fff;
 }
-
+.search__container span{display: inline-block;}
+.search__place input{width: 100%;}
+.search__date input{width: 90px;}
+.search__container input{
+	border: none;
+    font-size: 19px;
+}
+.search__mini{
+	@include search-borde(1px, $color-border, 5px);
+	padding: 2%;
+}
+.search__btn__big{
+	width: 100%;
+    background-color: #fff;
+    border: none;
+}
