@@ -44,37 +44,45 @@
 		</div>
 		<section>
 			<div class="container">
-				<div class="search__container visible-sm hidden-xs">
-					<div class="search__place">
-						<p>Donde</p>
-						<input type="text" name="location" placeholder="Destino, ciudad, dirección">
-					</div>
-					<div class="search__date">
-						<p>Cuando</p>
-						<input type="text" name="llegada" placeholder="Llegada">
-						<input type="text" name="salida" placeholder="Salida">
-					</div>
-					<div class="search__go">
-						<div class="row">
-							<div class="col-xs-6">
-								<p>Huéspedes</p>
-								<select class="selectpicker">
-								  <option>1 huésped</option>
-								  <option>2 huéspedes</option>
-								  <option>3 huéspedes</option>
-								  <option>4 huéspedes</option>
-								  <option>5 huéspedes</option>
-								  <option>6 huéspedes</option>
-								  <option>7 huéspedes</option>
-								</select>	
+				<div class="search__container visible-sm visible-md visible-lg hidden-xs">
+					<div class="row">
+						<div class="col-xs-4 search__place">
+							<p>Donde</p>
+							<input type="text" name="location" placeholder="Destino, ciudad, dirección">
+						</div>
+						<div class="col-xs-4 search__date">
+							<p>Cuando</p>
+							<div class="row">
+								<div class="col-xs-6">
+									<input id="datetimepicker4" type="text" name="llegada" placeholder="Llegada">
+								</div>
+								<div class="col-xs-6">
+									<input id="datetimepicker5" type="text" name="salida" placeholder="Salida">
+								</div>
 							</div>
-							<div class="col-xs-6">
-								<button class="btn search__btn">Buscar</button>
+						</div>
+						<div class="col-xs-4 search__go">
+							<div class="row">
+								<div class="col-xs-6">
+									<p>Huéspedes</p>
+									<select class="selectpicker">
+									  <option>1 huésped</option>
+									  <option>2 huéspedes</option>
+									  <option>3 huéspedes</option>
+									  <option>4 huéspedes</option>
+									  <option>5 huéspedes</option>
+									  <option>6 huéspedes</option>
+									  <option>7 huéspedes</option>
+									</select>	
+								</div>
+								<div class="col-xs-6">
+									<button class="btn search__btn">Buscar</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="search__mini visible-xs hidden-sm">
+				<div class="search__mini visible-xs hidden-sm hidden-md hidden-lg">
 					<button type="button" class="search__btn__big text-left" data-toggle="modal" data-target="#myModal">Buscar</button>
 					<!-- Modal -->
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
