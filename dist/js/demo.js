@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var authSearch = window.localStorage.getItem("search");
+    //var authSearch = window.localStorage.getItem("search");
 
     
 
@@ -19,7 +19,9 @@ $(document).ready(function(){
     
     var departamentos = firebase.database().ref('search/');
     
-    departamentos.on('value', function(response) {
+    //departamentos.orderByKey().startAt("b").endAt("b\uf8ff").on('value', function(response) {
+    departamentos.orderByChild('distrito').startAt("M").endAt("M\uf8ff").on('value', function(response) {
+
         var data = response.val();
         console.log(data);
         var la = $("#la");
