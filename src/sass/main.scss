@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "_variables";
 @import "_mixins";
 
@@ -8,10 +9,20 @@
 	padding: 0px;
 }
 
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
 .header__logo {
 	width: 1.3em;
 }
 
 .header__img_slider { 
 	width: 100%;
+}
+
+.header__text {
+	top: 10rem;
+    left: 15rem;
+	position: absolute;
 }
