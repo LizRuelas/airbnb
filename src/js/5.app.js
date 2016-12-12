@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	//Date Picker
-	$('#datetimepicker4').datetimepicker();
-	$('#datetimepicker5').datetimepicker();
+	$(".verFecha").datetimepicker({
+        viewMode: 'years',
+        format: 'MM/YYYY'
+    });
+    //
 });
