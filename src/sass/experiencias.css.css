@@ -1,0 +1,90 @@
+
+.scroll-gal .viewport {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+.scroll-gal .viewport ul {
+  position: absolute;
+  width: 2000%;
+}
+.scroll-gal .viewport li {
+  float: left;
+  text-align: center;
+  margin-right: 20px;
+}
+.scroll-gal .viewport a {
+  color: #fff;
+}
+.scroll-gal .viewport img {
+  display: block;
+}
+.scroll-gal .move-left,
+.scroll-gal .move-right {
+  margin-top: 30px;
+  cursor: pointer;
+  width: 100px;
+  height: 300px;
+  background: green;
+}
+.scroll-gal .move-left {
+  background-position: -26px -188px;
+}
+.f-lft {
+  float: left;
+  cursor: pointer;
+  top: 190px;
+  font-size: 2em;
+}
+.f-rgt {
+  float: right;
+  cursor: pointer;
+  top: 190px;
+  font-size: 2em;
+}
+.clr {
+  clear: both;
+}
+.lsn {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+p{
+	margin-top: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+li{
+	
+	list-style: none;
+}
+a{
+	text-decoration: none;
+  color: #767676;
+}
+a:hover{
+	text-decoration: none;
+  color: #09888F;
+}
+#footBorder{
+	border-top: 1px solid #DCE0E0;
+	padding-top: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+h4{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+#footBottom{
+  border-bottom: 1px solid #DCE0E0;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+#brand{
+  height: 30px;
+  width: 30px;  
+  float: left;
+}
+.footer__margin{
+  margin-left: 10px;
+}
