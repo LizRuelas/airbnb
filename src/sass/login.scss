@@ -1,0 +1,17 @@
+$bg-facebook : #3B5998;
+#facebookLogin{
+	background-color: $bg-facebook;
+	border:1px solid $bg-facebook;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+	padding: 25px 100px; 		
+	font-size:16px;
+	cursor: pointer;
+}
+.fb {
+	position: absolute;
+	top: 32px;
+	left: 30px;
+	font-size: 21px;
+}
