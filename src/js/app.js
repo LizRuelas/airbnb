@@ -1,1 +1,3 @@
-dsfdsf
+$( document ).ready(function($) {
+  // $(".slider-testimonial").sss()//
+});

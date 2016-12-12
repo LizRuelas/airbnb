@@ -1,1 +1,17 @@
+@import "_variables";
+@import "_mixins";
 
+//inicio header
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+.header__logo {
+	width: 1.3em;
+}
+
+.header__img_slider { 
+	width: 100%;
+}
