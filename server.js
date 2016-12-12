@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var request = require('request');
+//var request = require('request');
 
 
 // prepare server
@@ -12,7 +12,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 //app.use(express.static(__dirname + "/public"));
 
 // ACAAAAAAAAAAAAAAAAAA
-app.get('/liz', function (req, res) {
+/*app.get('/liz', function (req, res) {
 
 	var bodyResponse = '';	
 	request('https://api.airbnb.com/v2/search_results?client_id=3092nxybyb0otqw18e8nh5nty&_limit=1', function (error, response, body) {
@@ -25,7 +25,7 @@ app.get('/liz', function (req, res) {
 		  }
 	});
     
-})
+})*/
 
 // ACAAAAAAAAAAAAAAAAAA FIN
 
