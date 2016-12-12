@@ -1,0 +1,6 @@
+//inicio header
+@mixin bordes($borde, $padding, $margins){
+	border: $borde solid $color-footer;
+	padding: $padding;
+	margin-top: $margins;
+}
