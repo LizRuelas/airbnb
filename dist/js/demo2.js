@@ -49,7 +49,6 @@ $(document).ready(function(){
             .endAt(bla+"\uf8ff").on('value', function(response) {
 
                 var data = response.val();
-                console.log(data);
                 var la = $("#la");
                 var contenedorData = "";
                 
@@ -57,13 +56,11 @@ $(document).ready(function(){
                     contenedorData += contactTemplate
                              .replace("{{distrito}}", user.distrito)                   
                              .replace("{{direccion}}", user.direccion);
-                             //.replace("{{email}}", key);
-                    //console.log(key);
-        });
+                });
         
-        la.html(contenedorData);
+                la.html(contenedorData);
 
-    });
+        });
 
      });
  
