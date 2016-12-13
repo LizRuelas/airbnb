@@ -13,26 +13,48 @@ $ancor-footer-hover: #09888F;
 	font-size: 2em;
 }
 /**************/
-.scroll-gal .viewport {
-  position: relative;
-  height: 450px;
-  overflow: hidden;
+.scroll-gal {
+  .viewport {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    ul{
+      position: absolute;
+      width: 2000%;
+
+      li{
+        float: left;
+        text-align: center;
+        margin-right: 20px;
+
+        a{
+          color: $color-blanco;
+          img{
+            display: block;
+          }
+        }
+        p{margin-top: 10px;}
+      }
+    }
+    
+
+  }
 }
-.scroll-gal .viewport ul {
+/* .scroll-gal .viewport ul {
   position: absolute;
   width: 2000%;
-}
-.scroll-gal .viewport li {
+} */
+/* .scroll-gal .viewport li {
   float: left;
   text-align: center;
   margin-right: 20px;
-}
-.scroll-gal .viewport a {
+} */
+/* .scroll-gal .viewport a {
   color: $color-blanco;
-}
-.scroll-gal .viewport img {
+} */
+/* .scroll-gal .viewport img {
   display: block;
-}
+} */
 .scroll-gal .move-left,
 .scroll-gal .move-right {
   margin-top: 30px;
@@ -57,33 +79,61 @@ $ancor-footer-hover: #09888F;
   margin: 0;
   padding: 0;
 }
-p{margin-top: 10px;}
-li{list-style: none;}
-a{
+/* p{margin-top: 10px;}
+ *//* li{list-style: none;} */
+/* a{
 	text-decoration: none;
-  	color: $ancor-footer;
-}
-a:hover{
+  color: $ancor-footer;
+  &:hover{
+    text-decoration: none;
+    color: $ancor-footer-hover;
+  }
+} */
+/* a:hover{
 	text-decoration: none;
-  	color: $ancor-footer-hover;
-}
+  color: $ancor-footer-hover;
+} */
 #footBorder{
 	border-top: 1px solid $color-footer;
 	padding-top: 40px;
+  #footBottom{
+    border-bottom: 1px solid $color-footer;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    h4{
+      font-weight: bold;
+    }
+  }
+  #brand{
+    height: 30px;
+    width: 30px;  
+    float: left;
+  }
+  .footer__margin{
+    margin-left: 10px;
+  }
+  a{
+    text-decoration: none;
+    color: $ancor-footer;
+    &:hover{
+      text-decoration: none;
+      color: $ancor-footer-hover;
+    }
+  }
 }
-h4{
+/* h4{
   font-weight: bold;
-}
-#footBottom{
+} */
+/* #footBottom{
   border-bottom: 1px solid $color-footer;
   padding-bottom: 40px;
   margin-bottom: 20px;
-}
-#brand{
+} */
+/* #brand{
   height: 30px;
   width: 30px;  
   float: left;
-}
-.footer__margin{
+} */
+/* .footer__margin{
   margin-left: 10px;
-}
+} */

@@ -21,6 +21,11 @@ $color-blanco: #fff;
 	background-color: $color-bnb;
 	color: $color-blanco;
 }
+.search__btn{
+	a{
+		color: $color-blanco;
+	}
+}
 .search__container span{display: inline-block;}
 .search__place input{width: 100%;}
 .search__date input{width: 90%;}
