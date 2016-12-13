@@ -12,7 +12,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/assets', express.static(__dirname+'/assets'));
 //app.use(express.static(__dirname + "/public"));
 
-// ACAAAAAAAAAAAAAAAAAA
+/*// ACAAAAAAAAAAAAAAAAAA
 app.get('/liz', function (req, res) {
 
 	var bodyResponse = '';	
@@ -28,7 +28,7 @@ app.get('/liz', function (req, res) {
     
 })
 
-// ACAAAAAAAAAAAAAAAAAA FIN
+// ACAAAAAAAAAAAAAAAAAA FIN*/
 
 
 
