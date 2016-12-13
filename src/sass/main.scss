@@ -4,9 +4,9 @@
 
 //inicio header
 * {
-	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
+	box-sizing: border-box;
 }
 
 body {
@@ -14,7 +14,17 @@ body {
 }
 
 .header__logo {
-	width: 1.3em;
+	width: 1.8em;
+}
+
+.header__menu {
+	border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
+	color:$color-texto-slider-1;
 }
 
 .header__img_slider { 
@@ -22,7 +32,36 @@ body {
 }
 
 .header__text {
-	top: 10rem;
+	top: 7rem;
     left: 15rem;
 	position: absolute;
+	color: $color-texto-slider-1;
+
+	h1 {
+		font-size: 3.2em;
+	    font-weight: bolder;
+	}
+
+	p {
+		font-size: 1.2em;
+	    font-family: sans-serif;
+	    color: $color-p-slider-1;	
+	    margin-top: $margin-top-slider;
+	}
+
+	a {
+	    padding: 0.8%;
+	    border-radius: 25px;
+	    display: inline-block;
+		border: 2px solid #ccc;
+	    color: $color-texto-slider-1;
+	    margin-top: $margin-top-slider;
+	}
+
+	a:link {
+		text-decoration: none;
+	}
+	
 }
+
+//fin header
