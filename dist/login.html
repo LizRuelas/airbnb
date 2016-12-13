@@ -8,8 +8,10 @@
   <script src="https://apis.google.com/js/api:client.js"></script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="google-signin-client_id" content="766741656408-rf4oag140490pdua7aanu3dvbm8ggfc6.apps.googleusercontent.com">
+
 		<meta name="viewport" content="initial-scale=1">
 		<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="shortcut icon" href="/assets/img/logo.png">
 	</head>
@@ -23,22 +25,29 @@
 				<span>Iniciar sesión con Facebook</span>
 			</button>
 		</div>
-		<div class="gmail" >
-			<div id="gSignInWrapper">
-		    <span class="label">Sign in with:</span>
-		    <div id="customBtn" class="customGPlusSignIn">
-		      <span class="icon"></span>
-		      <span class="buttonText">Google</span>
-		    </div>
-		  </div>
-		  <div id="name"></div>
-		  
-		</div>
-		<p>
-			<a id="facebookLogout" href="#" role="button">Logout</a>
-		</p>
+	
+
+		
+		<a id="facebookLogout" href="#" role="button">Logout</a>
 		<div id="status"></div>
 		
+
+			<div class="gmail" >
+			    <button  id="customBtn" >
+			      	<img class="gm" src="https://a1.muscache.com/airbnb/static/signinup/google_icon_2x-745c2280e5004d4c90e3ca4e60e3f677.png">
+			      <span class="buttonText">Inicar sesión con Google</span>
+			    </button>
+		</div>
+
+		<div id="statusGmail">
+		  	  <div id="name"></div>
+		  		<div id="outGmail"></div>
+		</div>
+
+
+
+	
+
 	</body>
 	<script
   src="https://code.jquery.com/jquery-3.1.1.min.js"

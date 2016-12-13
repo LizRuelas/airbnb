@@ -25,10 +25,10 @@ window.fbAsyncInit = function() {
 			status = document.getElementById("status");
 
 	  if (response.status === 'connected') {
-	    fbLogin.style.display = 'none';
 	    fbLogout.style.display = 'inline';
 	    status.style.display  = 'inline';
 	    status.style.float  = 'right';
+	    fbLogout.style.float = 'right';
 	    getUserInfo();
 	    
 	  } else {
@@ -40,7 +40,7 @@ window.fbAsyncInit = function() {
 	   
 	  }
 	}
-	
+
 	function getUserInfo() {
 		  FB.api('/me', function(response) {
 		  	console.log('getUserInfo',response);
@@ -64,12 +64,15 @@ window.fbAsyncInit = function() {
 	    });
 	  });
 	});
+
+
+
 	var googleUser = {};
  		var startApp = function() {
     gapi.load('auth2', function(){
       // Retrieve the singleton for the GoogleAuth library and set up the client.
       auth2 = gapi.auth2.init({
-        client_id: '766741656408-rf4oag140490pdua7aanu3dvbm8ggfc6.apps.googleusercontent.com',
+        client_id: '982412277215-1ml59sp449v29rmntqab4ht13m7lpp3h.apps.googleusercontent.com',
         cookiepolicy: 'single_host_origin',
         // Request scopes in addition to 'profile' and 'email'
         //scope: 'additional_scope'
@@ -84,9 +87,16 @@ window.fbAsyncInit = function() {
         function(googleUser) {
           document.getElementById('name').innerText = "Signed in: " +
               googleUser.getBasicProfile().getName();
+         document.getElementById("outGmail").innerHTML = '<a href="#" onclick="signOut();">Sign out</a>'
         }, function(error) {
           alert(JSON.stringify(error, undefined, 2));
         });
+  }
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      document.getElementById("statusGmail").style.display = "none";	
+    });
   }
 $(document).ready(function(){
 	startApp();
