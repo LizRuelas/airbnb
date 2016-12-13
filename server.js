@@ -9,10 +9,11 @@ app.use(express.static(__dirname + '/dist')); // redirect root
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+app.use('/assets', express.static(__dirname+'/assets'));
 //app.use(express.static(__dirname + "/public"));
 
 // ACAAAAAAAAAAAAAAAAAA
-/*app.get('/liz', function (req, res) {
+app.get('/liz', function (req, res) {
 
 	var bodyResponse = '';	
 	request('https://api.airbnb.com/v2/search_results?client_id=3092nxybyb0otqw18e8nh5nty&_limit=1', function (error, response, body) {
@@ -25,49 +26,9 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 		  }
 	});
     
-})*/
+})
 
 // ACAAAAAAAAAAAAAAAAAA FIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

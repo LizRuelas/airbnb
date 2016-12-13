@@ -2,25 +2,130 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-    <title>Yape</title>
+    <title>Búsqueda de Airbnb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <link rel="shortcut icon" href="/assets/img/logo_dos.png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	 <section class="search">
-         <span class="fa fa-search"></span>
-         <input placeholder="Buscar">
-    </section>
-	<section class="listado">
-		<div class="container">
-			<div id="la"></div>
-        </div>
+	<header>
+		<div class="row">
+			<div class="logo">
+				<img src="/assets/img/logo_dos.png" alt="" class="img-resp">
+			</div>
+			<div class="col-lg-6 search">
+				<span class="glyphicon glyphicon-search"></span>
+         		<input placeholder="Buscar">
+			</div>
+			<div class="col-lg-5 menu text-center">
+				<ul>
+					<li class="col-lg-5">Convíertete en anfitrión</li>
+					<li class="col-lg-2">Ayuda</li>
+					<li class="col-lg-2">Regístrate</li>
+					<li class="col-lg-3">Inicia Sesión</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="row date">
+						<div class="col-lg-2">
+							<span>Fechas</span>
+						</div>
+						<input type="date" class="col-lg-3">
+						<input type="date" class="col-lg-3">
+						<div class="dropdown col-lg-3">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							    Huésped
+								<span class="caret"></span>
+							 </button>
+							 <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							    <div class="drop">
+							    	<div class="col-lg-8">
+							    		<strong><span>1 adulto</span></strong>
+							    	</div>
+							    	<div class="col lg-4">
+							    		
+							    	</div>
+							    </div>
+							     <div class="drop">
+							    	<div class="col-lg-8">
+							    		<strong><span>0</span> niños</strong>
+							    		<span class="text-right">2 a 12</span>
+							    	</div>
+							    </div>
+							     <div class="drop">
+							    	<div class="col-lg-8">
+							    		<strong><span>0</span> bebes</strong>
+							    		<span class="text-right">Menos de dos</span>
+							    	</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+					<div class="row room">
+						<div class="col-lg-2">
+							<span>Tipo de habitación</span>
+						</div>
+						<div class="col-lg-3">
+							<div class="col-lg-1">
+								<i class="glyphicon glyphicon-home"></i>							
+							</div>
+							<div class="col-lg-8">
+								<span>Casa entera</span>
+							</div>
+							<div class="col-lg-1">
+								<input type="checkbox">
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="col-lg-1">
+								<i class="glyphicon glyphicon-bed"></i>							
+							</div>
+							<div class="col-lg-8">
+								<span>Habiación privada</span>
+							</div>
+							<div class="col-lg-1">
+								<input type="checkbox">
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="col-lg-1">
+								<i class="glyphicon glyphicon-lamp"></i>							
+							</div>
+							<div class="col-lg-8">
+								<span>Habitación compartida</span>
+							</div>
+							<div class="col-lg-1">
+								<input type="checkbox">
+							</div>
+						</div>
+					</div>
+					<div class="row price">
+						
+					</div>
+					<div class="row filter">
+						<div class="col-lg-6">
+							<button type="button" class="btn btn-default ">
+							Filtros
+							</button>
+						</div>
+						<div class="col-lg-6 text-right">
+							Más de 300 alquileres.
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5">
+					
+				</div>
+			</div>
+		</div>	
 	</section>
     
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   
 	<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -33,6 +138,4 @@
 	  };
 	  firebase.initializeApp(config);
 	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-	<!-- <script type="text/javascript" src="js/demzo.js"></script> -->
 </body>
