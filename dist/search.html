@@ -11,7 +11,7 @@
 	<header>
 		<div class="row">
 			<div class="logo">
-				<img src="/assets/img/logo_dos.png" alt="" class="img-resp">
+				<img src="/assets/img/logo_dos.png" alt="">
 			</div>
 			<div class="col-lg-6 search">
 				<span class="glyphicon glyphicon-search"></span>
@@ -66,6 +66,7 @@
 							</div>
 						</div>
 					</div>
+					<div class="divider"></div>
 					<div class="row room">
 						<div class="col-lg-2">
 							<span>Tipo de habitación</span>
@@ -104,9 +105,23 @@
 							</div>
 						</div>
 					</div>
+					<div class="divider"></div>
 					<div class="row price">
-						
+						<div class="col-lg-2">
+							<span>Rango de precios</span>
+						</div>
+						<div class="col-lg-10">
+							<section class="range-slider">
+							  <span class="output outputOne"></span>
+							  <span class="output outputTwo"></span>
+							  <span class="full-range"></span>
+							  <span class="incl-range"></span>
+							  <input name="rangeOne" value="10" min="0" max="5000" step="1" type="range">
+							  <input name="rangeTwo" value="90" min="0" max="5000" step="1" type="range">
+							</section>
+						</div>
 					</div>
+					<div class="row divider"></div>
 					<div class="row filter">
 						<div class="col-lg-6">
 							<button type="button" class="btn btn-default ">
@@ -120,7 +135,6 @@
 				</div>
 				<div class="col--lg-5">
 					
-				</div>
 			</div>
 		</div>	
 	</section>
