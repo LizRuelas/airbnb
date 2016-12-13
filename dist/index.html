@@ -9,7 +9,7 @@
 		<link rel="shortcut icon" href="/assets/img/logo.png">
 	</head>	
 	<body>
-		<nav class="header__menu navbar navbar-default">
+		<nav class="header__menu navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -30,17 +30,27 @@
 		      	<li><a href="#">Conviertete en anfitrión</a></li>
 		      	<li><a href="#">Ayuda</a></li>
 		        <li><a href="#">Regístrate</a></li>
-		        <li><a href="#">Iniciar sesión</a></li>
+		        <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Iniciar sesión</a></li>
 		      </ul>
 		    </div>
 		  </div>
 		</nav>
-		<div class="header__slider">
-			<div class="header__text">
-                <h1>Te espera un mundo de viajes inolvidables.</h1>
-                <p>Alojamientos, experiencias y lugares, todo en una sola aplicación</p>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore rerum quia quisquam ab odio laborum quam nobis harum corrupti eos ipsam nisi ea, perspiciatis dolores labore! Corporis ratione, nisi.
+                </div>
             </div>
-			<div><img src="/assets/img/slider-1.jpg" class="header__img_slider"></div>
+        </div>
+		<div class="header__sliders">
+            <div class="header__slider_uno">
+    			<div class="header__text" id="cambio-navbar">
+                    <h1>Te espera un mundo de viajes inolvidables.</h1>
+                    <p>Alojamientos, experiencias y lugares, todo en una sola aplicación</p>
+                    <a href="#">Descubre las últimas novedades</a>
+                </div>
+			<div><img src="/assets/img/slider-1.jpg" class="header__img_slider"></div>  
+            </div>
 		</div>
 		<section id="search">
 			<div class="container">
