@@ -26,6 +26,7 @@ $ancor-footer-hover: #09888F;
         float: left;
         text-align: center;
         margin-right: 20px;
+        list-style: none;
 
         a{
           color: $color-blanco;
@@ -40,21 +41,6 @@ $ancor-footer-hover: #09888F;
 
   }
 }
-/* .scroll-gal .viewport ul {
-  position: absolute;
-  width: 2000%;
-} */
-/* .scroll-gal .viewport li {
-  float: left;
-  text-align: center;
-  margin-right: 20px;
-} */
-/* .scroll-gal .viewport a {
-  color: $color-blanco;
-} */
-/* .scroll-gal .viewport img {
-  display: block;
-} */
 .scroll-gal .move-left,
 .scroll-gal .move-right {
   margin-top: 30px;
@@ -79,20 +65,6 @@ $ancor-footer-hover: #09888F;
   margin: 0;
   padding: 0;
 }
-/* p{margin-top: 10px;}
- *//* li{list-style: none;} */
-/* a{
-	text-decoration: none;
-  color: $ancor-footer;
-  &:hover{
-    text-decoration: none;
-    color: $ancor-footer-hover;
-  }
-} */
-/* a:hover{
-	text-decoration: none;
-  color: $ancor-footer-hover;
-} */
 #footBorder{
 	border-top: 1px solid $color-footer;
 	padding-top: 40px;
@@ -120,20 +92,5 @@ $ancor-footer-hover: #09888F;
       color: $ancor-footer-hover;
     }
   }
+  li{list-style: none;}
 }
-/* h4{
-  font-weight: bold;
-} */
-/* #footBottom{
-  border-bottom: 1px solid $color-footer;
-  padding-bottom: 40px;
-  margin-bottom: 20px;
-} */
-/* #brand{
-  height: 30px;
-  width: 30px;  
-  float: left;
-} */
-/* .footer__margin{
-  margin-left: 10px;
-} */
