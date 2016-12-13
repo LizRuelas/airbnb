@@ -13,12 +13,14 @@
 			<div class="logo">
 				<img src="../assets/img/logo_dos.png" alt="" class="img-resp">
 			</div>
+			<!-- el unput de la busqueda -->
 			<div class="col-lg-6 search">
-			<form  class="form-inline menu" method="get">
-		        <input type="text" name="search" placeholder="Buscar " class="search">
-		        <input type="button" name="search" class="search1">
-		    </form>
+				<form  class="form-inline menu" method="get">
+			        <input id="buscar" type="text" name="search" placeholder="Buscar " class="search">
+			        <input type="button" name="search" class="search1">
+			    </form>
 			</div>
+			<!-- fin de la busqueda -->
 			<div class="col-lg-5 menu text-center">
 				<ul>
 					<li class="col-lg-5">Convíertete en anfitrión</li>
@@ -102,7 +104,7 @@
 								<span>Habitación compartida</span>
 							</div>
 							<div class="col-lg-1">
-								<input type="checkbox" id="checkbox-2">
+								<input type="checkbox" id="checkbox-3">
 							</div>
 						</div>
 					</div>
@@ -121,27 +123,14 @@
 					</div>
 				</div>
 				<div class="col-md-5 col-lg-5">
-					<div class="section con-mapa">
-	    				<div class="mapa" id="mapa"></div>
+					<div>
+	    				<div id="mapa"></div>
 					</div>
 				</div>
 			</div>
 		</div>	
 	</section>
-    
-   
-	<!-- <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script> -->
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD28lk9_G9N5sC3My6TaIN3jAAZH7tDVVU" async defer></script>
-<!-- 	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyBsgz7-hM8qnXDoLAqijehuLVBNx1ZUZKk",
-	    authDomain: "airbnb-8c1dc.firebaseapp.com",
-	    databaseURL: "https://airbnb-8c1dc.firebaseio.com",
-	    storageBucket: "airbnb-8c1dc.appspot.com",
-	    messagingSenderId: "597759055941"
-	  };
-	  firebase.initializeApp(config);
-	</script> -->
-	<script type="text/javascript" src="js/demo2.js"></script> 	
+	<script type="text/javascript" src="js/main.js"></script> 	
 </body>
