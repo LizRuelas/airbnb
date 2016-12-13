@@ -6,7 +6,7 @@ var gulp = require("gulp"),
 
 gulp.task("devjs", function () {
     gulp.src([
-        "node_modules/jquery/dist/*.min.js",
+        "node_modules/jquery/dist/jquery.js",
         "node_modules/bootstrap/dist/js/*.min.js",
         "src/js/*.js"])
     .pipe(concat("main.js"))
