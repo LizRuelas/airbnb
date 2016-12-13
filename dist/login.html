@@ -4,11 +4,18 @@
 		<title></title>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="google-signin-client_id" content="766741656408-rf4oag140490pdua7aanu3dvbm8ggfc6.apps.googleusercontent.com">
 		<meta name="viewport" content="initial-scale=1">
+		<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="shortcut icon" href="/assets/img/logo.png">
 	</head>
+	<script>
+		
+	</script>
 	<body>
 		<div class="facebook">
 			<button id="facebookLogin" role="button">
@@ -16,11 +23,27 @@
 				<span>Iniciar sesión con Facebook</span>
 			</button>
 		</div>
+		<div class="gmail" >
+			<div id="gSignInWrapper">
+		    <span class="label">Sign in with:</span>
+		    <div id="customBtn" class="customGPlusSignIn">
+		      <span class="icon"></span>
+		      <span class="buttonText">Google</span>
+		    </div>
+		  </div>
+		  <div id="name"></div>
+		  
+		</div>
 		<p>
 			<a id="facebookLogout" href="#" role="button">Logout</a>
 		</p>
-		<div id="status" ></div>
+		<div id="status"></div>
+		
 	</body>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/login.js"></script>
 </html>
 

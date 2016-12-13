@@ -1,17 +1,52 @@
 $bg-facebook : #3B5998;
+
 #facebookLogin{
 	background-color: $bg-facebook;
 	border:1px solid $bg-facebook;
 	border-radius: 5px;
 	text-decoration: none;
 	color: white;
-	padding: 25px 100px; 		
+	padding: 20px 90px; 		
 	font-size:16px;
 	cursor: pointer;
 }
 .fb {
 	position: absolute;
-	top: 32px;
-	left: 30px;
+	top: 18px;
+	left: 21px;
 	font-size: 21px;
 }
+#customBtn {
+      display: inline-block;
+      background: white;
+      color: #444;
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    span.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    span.icon {
+      background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 14px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+    }
