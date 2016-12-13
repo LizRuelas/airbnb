@@ -40,16 +40,30 @@ section{
 		padding:1%;
 	}
 	.date{
+		padding:1%;
 		input{
-			width: 100%;
-			padding:2%
+			padding:1%;
+			margin: 1%;
+		}
+		.dropdown{
+			margin: 1%;
+			padding:0;
+			button{
+				width: 100%;
+			}
+			.dropdown-menu{
+				width: 300px;
+				.drop{
+					padding:3%;
+				}
+			}
 		}
 	}
 	.room{
 		div:nth-child(n+2){
 			background-color: $block-gray;
 			margin: 1%;
-			padding:2%;
+			padding:1%;
 			input{
 				padding:2%;
 			}
