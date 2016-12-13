@@ -1,4 +1,18 @@
+/***VARIABLES***/
+$color-blanco: #fff;
+$bg-verde: #00A699;
+$color-footer: #DCE0E0;
+$ancor-footer: #767676;
+$ancor-footer-hover: #09888F;
 
+/****MIXIN****/
+@mixin flotar($direc){
+	float: $direc;
+	cursor: pointer;
+	top: 190px;
+	font-size: 2em;
+}
+/**************/
 .scroll-gal .viewport {
   position: relative;
   height: 450px;
@@ -14,7 +28,7 @@
   margin-right: 20px;
 }
 .scroll-gal .viewport a {
-  color: #fff;
+  color: $color-blanco;
 }
 .scroll-gal .viewport img {
   display: block;
@@ -25,22 +39,15 @@
   cursor: pointer;
   width: 100px;
   height: 300px;
-  background: green;
 }
 .scroll-gal .move-left {
   background-position: -26px -188px;
 }
 .f-lft {
-  float: left;
-  cursor: pointer;
-  top: 190px;
-  font-size: 2em;
+  @include flotar(left)
 }
 .f-rgt {
-  float: right;
-  cursor: pointer;
-  top: 190px;
-  font-size: 2em;
+  @include flotar(right)
 }
 .clr {
   clear: both;
@@ -50,33 +57,25 @@
   margin: 0;
   padding: 0;
 }
-p{
-	margin-top: 10px;
-  font-family: 'Raleway', sans-serif;
-}
-li{
-	
-	list-style: none;
-}
+p{margin-top: 10px;}
+li{list-style: none;}
 a{
 	text-decoration: none;
-  color: #767676;
+  	color: $ancor-footer;
 }
 a:hover{
 	text-decoration: none;
-  color: #09888F;
+  	color: $ancor-footer-hover;
 }
 #footBorder{
-	border-top: 1px solid #DCE0E0;
+	border-top: 1px solid $color-footer;
 	padding-top: 40px;
-  font-family: 'Raleway', sans-serif;
 }
 h4{
-  font-family: 'Raleway', sans-serif;
   font-weight: bold;
 }
 #footBottom{
-  border-bottom: 1px solid #DCE0E0;
+  border-bottom: 1px solid $color-footer;
   padding-bottom: 40px;
   margin-bottom: 20px;
 }
