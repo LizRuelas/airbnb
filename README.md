@@ -21,7 +21,7 @@ Somos estudiantes de Laboratoria y tenemos como objetivo replicar la página de 
 	
 ### PLANEACIÓN Y DESARROLLO:
 	
-	####Se usó:
+	### Se usó:
 	* Bootstrap
 	* Jquery
 	* Sass
@@ -29,10 +29,10 @@ Somos estudiantes de Laboratoria y tenemos como objetivo replicar la página de 
 	* Express
 	* Npm
 	
-	#### Tiempo:
+	### Tiempo:
 	El proyecto se realizo en 4 días, logrando entregaa un Producto Minimo Viable.
 	
-	#### Desarrollo
+	### Desarrollo
 	* 1er día: Informarnos de como integrar Gulp al proyecto.
 	* 2do día: Maquetado de la vista.
 	* 3er día: Funcionalidad de la página en el proceso de búsqueda.
