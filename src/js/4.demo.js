@@ -1,341 +1,190 @@
-var firstPosition = undefined;
-var load = function() {
+/**
+ * Created by vico on 13/12/16.
+ */
+
+var cargarPagina = function() {
     if (navigator.geolocation) { 
-        navigator.geolocation.getCurrentPosition(cargaExitosa, error);
+        // también se puede usar if ("geolocation" in navigator) {}
+        navigator.geolocation.getCurrentPosition(showResult, funcionError);
     }
 };
 
-var cargaExitosa = function(posicion) {
-    var lat = posicion.coords.latitude;
-    var lon = posicion.coords.longitude;
-    var latlon = new google.maps.LatLng(lat, lon);
-    firstPosition = latlon;
-    var mapa = document.getElementById('mapa')
-    var myOptions = {
-        center:latlon,zoom:12,
-        mapTypeId:google.maps.MapTypeId.ROADMAP,
-        mapTypeControl:true,
-        zoomControl:true,
-        streetViewControl:true,
-    };
-    var mostrarMap = new google.maps.Map(document.getElementById('mapa'), myOptions);
-
+var funcionError = function (error) {
+    console.log(error);
 };
 
-var error = function (error) {
-     console.log(error);
-};
+var contactTemplate ="<div class='row'>" +
+        "<div class='col s10' >"+
+        "<ul style='list-style-type:none'>"+
+        "<li>{{distrito}}</li>"+
+        "<li>{{direccion}}</li>"+
+        "<li>{{tipo}}</li>"+
+        "</ul>"+
+        "</div>"+
+        "<div class='col s2'>"+
+        "<a class='contactos' id='{{email}}'><i class='material-icons'>keyboard_arrow_right</i></a>"+
+        "</div>" +
+        "</div>";
 
-$('.search1').on('click', function() {
 
-    var address = $('#buscar').val();
-    console.log(address);
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': address}, geocodeResult);
+var result = {};
+
+$(document).ready(function(){
+    //var authSearch = window.localStorage.getItem("search");
+    cargarPagina();
+
+    var database = firebase.database();
+
+    var departamentos = firebase.database().ref('search/');
+
+    //departamentos.orderByKey().startAt("b").endAt("b\uf8ff").on('value', function(response) {
+    departamentos.on('value', function(response) {
+
+        var data = response.val();
+        //console.log(data);
+        result = data;
+        showResult();
+
+    });
+
+    $(".enviar").click(function(event) {
+
+        result = {};
+
+        // filtrar por nombre
+        var bla = $('.buscar').val();
+
+        departamentos
+            .orderByChild('distrito')
+            .startAt(bla)
+            .endAt(bla+"\uf8ff").on('value', function(response) {
+            var data = response.val();;
+            result = data;
+            showResult();
+
+        });
+        //
+
+        //filtrar por tipo
+        var tipoHabitacion = $("#checkbox1");
+        if(tipoHabitacion.is(":checked") == true){
+            departamentos
+            .orderByChild('tipo')
+            .equalTo('habitacion-privada').on('value', function(response) {
+                var data = response.val();
+                result = getDataIntersection(data,result);
+                showResult();
+            });
+        }
+        //
+
+        var tipoHabitacion = $("#checkbox2");
+        if(tipoHabitacion.is(":checked") == true){
+            departamentos
+            .orderByChild('tipo')
+            .equalTo('habitacion-compartida').on('value', function(response) {
+                var data = response.val();
+                console.log(data);
+                result = getDataIntersection(data,result);
+                showResult();
+            });
+        }
+        //
+
+        //filtrar por tipo
+        var tipoHabitacion = $("#checkbox3");
+        if(tipoHabitacion.is(":checked") == true){
+            departamentos
+            .orderByChild('tipo')
+            .equalTo('casa-entera').on('value', function(response) {
+                var data = response.val();
+
+                result = getDataIntersection(data,result);
+
+                showResult();
+            });
+        }
+        //
+
+
+    });
+
+    function intersect(data){
+        $.each(data, function(index, value) {
+            if( result[index] === undefined ) {
+                result[index] = value;
+            }
+        });
+    }
+
+    
+
+    function intersection(o1, o2) {
+        return Object.keys(o1).concat(Object.keys(o2)).sort().reduce(function (r, a, i, aa) {
+            if (i && aa[i - 1] === a) {
+                r.push(a);
+            }
+            return r;
+        }, []);
+    }
+
+    function intersections(o1, o2) {
+        return Object.keys(o1).filter({}.hasOwnProperty.bind(o2));
+    }
+
+    function getDataIntersection(o1, o2){
+        data = intersections(o1, o2);
+        returndata = {};
+        if(typeof data == 'string'){
+            returndata[data]=o2[data];
+            return returndata;
+        }else{
+           data.forEach(function(entry) {
+                returndata[entry]=o2[entry];
+            }); 
+
+            return returndata;
+        }
+    }
+
+    
+
 });
- 
-var geocodeResult= function(results, status) {
-    if (status == 'OK') {
-        var mapOptions = {
-            center: results[0].geometry.location,
+
+function showResult(){
+        var la = $("#la");
+        var contenedorData = "";
+        console.log(result);
+
+
+        map = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 14,
+            center: new google.maps.LatLng(-12.079986982830766, -77.09998252678224),
             mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map($("#mapa").get(0), mapOptions);
-        map.fitBounds(results[0].geometry.viewport);
-        var iconBase1 = "../assets/img/";
-        var markerOptions = { position: results[0].geometry.location, icon: iconBase1 + 'radius.png' }
-        var marker = new google.maps.Marker(markerOptions);
-        marker.setMap(map);
-        /*posisiciones exactas*/
-    } else {
-        alert("Geocoding no tuvo éxito debido a: " + status);
+        });
+
+        $.each(result, function(key, user){
+            //console.log(user.tipo);
+            contenedorData += contactTemplate
+                .replace("{{distrito}}", user.distrito)
+                .replace("{{direccion}}", user.direccion)
+                .replace("{{tipo}}", user.tipo);
+
+
+            //pintar markdores
+            var infowindow = new google.maps.InfoWindow();
+            marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(user.latitud, user.longitud),
+                  map: map
+                });
+                google.maps.event.addListener(marker, 'click', (function(marker, key) {
+                  return function() {
+                    infowindow.setContent(user.precio);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, key));
+
+        });
+
+        la.html(contenedorData);
     }
-    $("#checkbox-1").click(function(){
-      var features = [];
-       var array = busquedaDepartamentos();
-       var mapOptions = {
-            zoom: 15,
-            center:  new google.maps.LatLng(firstPosition.lat(), firstPosition.lng())
-       };
-       var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
-       $.each(array, function (index, value) {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(value.latitud, value.longitud),
-            map: map,
-            clickable: false,
-            content: 'Map Marker',
-            markerOffset: new google.maps.Point(0,20)
-        });
-        console.log("paso" + index);
-       });     
-    });
-
-    $("#checkbox-2").click(function(){ 
-      var features = [];
-       var array = busquedaCasas();
-       var mapOptions = {
-            zoom: 14,
-            center:  new google.maps.LatLng(firstPosition.lat(), firstPosition.lng())
-       };
-       var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
-        
-       $.each(array, function (index, value){
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(value.latitud, value.longitud),
-            map: map,
-            clickable: false,
-            content: 'Map Marker',
-            markerOffset: new google.maps.Point(0,4)
-        });
-        console.log("paso" + index);
-       });
-    });
-
-    $("#checkbox-3").click(function(){   
-      var features = [];
-       var array = busquedaCuartosCompartidos();
-       var mapOptions = {
-            zoom: 14,
-            center:  new google.maps.LatLng(firstPosition.lat(), firstPosition.lng())
-       };
-       var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
-        
-       $.each(array, function (index, value) {
-        
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(value.latitud, value.longitud),
-            map: map,
-            clickable: false,
-            content: 'Map Marker',
-            markerOffset: new google.maps.Point(0,4)
-        });
-
-        console.log("paso" + index);
-
-       });
-    });
-
-// function addMarker(feature) {
-    //     var iconBase = '../asssets/img/';
-    //     var icons = {
-    //       parking: {
-    //         icon: iconBase + 'circulo.png'
-    //       }
-    //     };
-    //     var map1 = new google.maps.Map(document.getElementById('mapa'));
-    //   // map = new google.maps.Map(document.getElementById('mapa'),
-    //   var marker = new google.maps.Marker({
-    //     position: feature.position,
-    //     icon: icons[feature.type].icon,
-    //     map: map1
-    //   });
-    // }
-}
-
-$(document).ready(load);
-
-function busquedaCasas() {
-    var obj1 = {
-        direccion: "Av.Grau 365",
-        distrito: "Barranco",
-        fechaInicio: "06/12/2016",
-        fechaSalida: "06/12/2017",
-        contacto: "Víctor Ruiz",
-        baños: "3",
-        cuartos: "6",
-        precioTotal: 25000000,
-        television : "si",
-        piscina: "si",
-        latitud: -12.143065,
-        longitud: -77.023443
-    };
-    var obj2 = {
-        direccion: "Calle Francia 715",
-        distrito: "Barranco",
-        fechaInicio: "13/12/2016",
-        fechaSalida: "01/01/2017",
-        contacto: "Jaime Salcedo",
-        baños: "3",
-        cuartos: "6",
-        precioTotal: 30000000,
-        television : "si",
-        piscina: "no",
-        latitud: -12.141313,
-        longitud: -77.025299
-    };
-    var obj3 = {
-        direccion: "Jorge Chavez 509",
-        distrito: "Barranco",
-        fechaInicio: "13/12/2016",
-        fechaSalida: "01/01/2017",
-        contacto: "Víctor Ruiz",
-        baños: "3",
-        cuartos: "8",
-        precioTotal: 300000000,
-        television : "si",
-        piscina: "no",
-        latitud: -12.143033,
-        longitud: -77.024859
-    };
-    var obj4 = {
-        direccion: "Av. Grau 485",
-        distrito: "Barranco",
-        fechaInicio: "13/12/2016",
-        fechaSalida: "01/01/2017",
-        contacto: "Jaime Salcedo",
-        baños: "3",
-        cuartos: "6",
-        precioTotal: 25000000,
-        television : "si",
-        piscina: "no",
-        latitud: -12.143877,
-        longitud: -77.023969
-    };
-    var obj5 = {
-        direccion: "Calle Arica 262",
-        distrito: "Barranco",
-        fechaInicio: "13/12/2016",
-        fechaSalida: "01/01/2017",
-        baños: "3",
-        cuartos: "6",
-        contacto: "Ing. Víctor Ruiz",
-        precioTotal: 230000000,
-        television : "si",
-        piscina: "no",
-        latitud: -12.143085,
-        longitud:  -77.022649
-    };
-
-    var Array = [];
-    Array.push(obj1);
-    Array.push(obj2);
-    Array.push(obj3);
-    Array.push(obj4);
-    Array.push(obj5);
-
-    return Array;
-};
-
-function busquedaDepartamentos() {
-    var obj1 = {
-        fechaInicio: "06/12/2016",
-        fechaSalida: "06/12/2017",
-        direccion: "Av. Grau 272",
-        distrito: "Miraflores",
-        cuartos: "2",
-        baños: "3",
-        contacto: "Ángel Rodríguez",
-        latitud: -12.123029,
-        longitud: -77.027459
-    };
-    var obj2 = {
-        fechaInicio: "06/12/2016",
-        fechaSalida: "06/12/2017",
-        direccion: "Calle José Galvez 893",
-        distrito: "Miraflores",
-        cuartos: "2",
-        baños: "3",
-        contacto: "Raúl Borja",
-        latitud: -12.122116,
-        longitud: -77.026740
-    };
-    var obj3 = {
-        fechaInicio: "06/12/2016",
-        fechaSalida: "06/12/2017",
-        direccion: "Calle 2 de Mayo 970",
-        distrito: "Miraflores",//"Surco",
-        cuartos: "2",
-        baños: "3",
-        contacto: "Merly Luna",
-        latitud: -12.119651,
-        longitud: -77.028618
-    };
-    var obj4 = {
-        fechaInicio: "06/12/2016",
-        fechaSalida: "06/12/2017",
-        direccion: "Calle 2 de Mayo 864",
-        distrito: "Miraflores",
-        cuartos: "2",
-        baños: "3",
-        contacto: "Leila Torres",
-        latitud: -12.123522,
-        longitud: -77.037708
-    };
-    var obj5 = {
-        fechaInicio: "06/12/2016",
-        fechaSalida: "06/12/2017",
-        direccion: "Calle Coronel Inclán 227",
-        distrito: "Miraflores",
-        cuartos: "2",
-        baños: "3",
-        contacto: "Julio Sánchez",
-        latitud: -12.123270,
-        longitud: -77.028746
-    };
-
-    var Array = [];
-    Array.push(obj1);
-    Array.push(obj2);
-    Array.push(obj3);
-    Array.push(obj4);
-    Array.push(obj5);
-
-    return Array;
-};
-
-function busquedaCuartosCompartidos() {
-    var obj1 = {
-        direccion: "Pasaje Rodadero 110",
-        provincia: "Lima",
-        distrito: "Lince",
-        huespedes: "6",
-        baños: 2,
-        latitud: -12.086804,
-        longitud: -77.031597
-    };
-    var obj2 = {
-        direccion: "av. militar 1933",
-        provincia: "Lima",
-        distrito: "Lince",
-        huespedes: "6",
-        baños: 3,
-        latitud: -12.083416,
-        longitud: -77.031396
-    };
-    var obj3 = {
-        direccion: "av. juan pardo de zela 444",
-        provincia: "Lima",
-        distrito: "Lince",
-        huespedes: "6",
-        baños: 1,
-        latitud: -12.083319,
-        longitud: -77.032163
-    };
-    var obj4 = {
-        direccion: "José Bernardo Alcedo 401",
-        provincia: "Lima",
-        distrito: "Lince",
-        huespedes: "6",
-        baños: 2,
-        latitud: -12.084283,
-        longitud: -77.032191
-    };
-    var obj5 = {
-        direccion: "Calle Risso 347",
-        provincia: "Lima",
-        distrito: "Lince",
-        huespedes: "6",
-        baños: 2,
-        latitud: -12.085406,
-        longitud: -77.032533
-    };
-
-    var Array = [];
-    Array.push(obj1);
-    Array.push(obj2);
-    Array.push(obj3);
-    Array.push(obj4);
-    Array.push(obj5);
-
-    return Array;
-};

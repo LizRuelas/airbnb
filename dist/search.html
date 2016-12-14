@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
     <title>Búsqueda de Airbnb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/logo_dos.png">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -16,8 +17,8 @@
 					<img src="/assets/img/logo_dos.png" alt="">
 				</div>
 				<form  class="form-inline menu" method="get">
-			        <input id="buscar" type="text" name="search" placeholder="Buscar " class="search">
-			        <input type="button" name="search" class="search1">
+					<input placeholder="Buscar" class="buscar">
+			        <input type="button" name="search" class="enviar" value="Buscar">
 			    </form>
 			</div>
 			<!-- fin de la busqueda -->
@@ -111,10 +112,10 @@
 								<i class="glyphicon glyphicon-home"></i>							
 							</div>
 							<div class="col-sm-8">
-								<span>Casa entera</span>
+								<span>Habitacion Privada</span>
 							</div>
 							<div class="col-sm-1">
-								<input type="checkbox" id="checkbox-1">
+								<input type="checkbox" id="checkbox1">
 							</div>
 						</div>
 						<div class="col-sm-3">
@@ -122,10 +123,10 @@
 								<i class="glyphicon glyphicon-bed"></i>							
 							</div>
 							<div class="col-sm-8">
-								<span>Habiación privada</span>
+								<span>Habiación Compartida</span>
 							</div>
 							<div class="col-sm-1">
-								<input type="checkbox" id="checkbox-2">
+								<input type="checkbox" id="checkbox2">
 							</div>
 						</div>
 						<div class="col-sm-3">
@@ -133,10 +134,10 @@
 								<i class="glyphicon glyphicon-lamp"></i>							
 							</div>
 							<div class="col-sm-8">
-								<span>Habitación compartida</span>
+								<span>Casa Entera</span>
 							</div>
 							<div class="col-sm-1">
-								<input type="checkbox" id="checkbox-3">
+								<input type="checkbox" id="checkbox3">
 							</div>
 						</div>
 					</div>
@@ -191,7 +192,11 @@
 						
 					</div>
 					<div class="row">
-						
+						<section class="listado">
+					        <div class="container">
+					            <div id="la"></div>
+					        </div>
+					    </section> 
 					</div>
 				</div>
 				<div class="col-md-5 col-lg-5">
@@ -203,6 +208,22 @@
 		</div>	
 	</section>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD28lk9_G9N5sC3My6TaIN3jAAZH7tDVVU" async defer></script>
-	<script type="text/javascript" src="js/main.js"></script> 	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUrCrFxDQmkR0-r9zCC-vJSD4d_PgXRZU"
+    async defer></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+	<script>
+	    // Initialize Firebase
+	    var config = {
+	        apiKey: "AIzaSyBsgz7-hM8qnXDoLAqijehuLVBNx1ZUZKk",
+	        authDomain: "airbnb-8c1dc.firebaseapp.com",
+	        databaseURL: "https://airbnb-8c1dc.firebaseio.com",
+	        storageBucket: "airbnb-8c1dc.appspot.com",
+	        messagingSenderId: "597759055941"
+	    };
+	    firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript" src= "js/main.js"></script>
 </body>
+
+</html>
