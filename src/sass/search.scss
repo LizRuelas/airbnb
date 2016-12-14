@@ -1,11 +1,16 @@
 @import 'variables';
 body{
 	box-sizing:border-box;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 section{
   .container-fluid{
     .col-lg-7{
        overflow-y: scroll;
+       overflow-x: hidden;
+       height: 88vh;
     }
   }
 }
@@ -105,6 +110,13 @@ section{
 	.price{
 		padding:2%;
 	}
+  .results{
+    padding:2%;
+  }
+}
+#texto__imagen{
+  font-size: 0.8em;
+  margin-bottom: 10px;
 }
 
 .range-slider {
