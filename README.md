@@ -28,6 +28,8 @@ Somos estudiantes de Laboratoria y tenemos como objetivo replicar la página de 
 	* Gulp
 	* Express
 	* Npm
+	* Heroku
+	* Firebase (base de datos)
 	
 ### Tiempo:
 	El proyecto se realizo en 4 días, logrando entregaa un Producto Minimo Viable.
