@@ -37,8 +37,27 @@
 		</nav>
         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
             <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore rerum quia quisquam ab odio laborum quam nobis harum corrupti eos ipsam nisi ea, perspiciatis dolores labore! Corporis ratione, nisi.
+                <div class="modal-content" id="modal__border">   
+                    <button id="button_fb_width" type="button" class="btn btn-primary"><span class="footer__margin fa fa-facebook"></span>&nbsp&nbsp Iniciar sesión con Facebook</button>
+                    <button id="button_gl_width" type="button" class="btn btn-default"><img id="google_imagen" src="/assets/img/google.png">&nbsp&nbsp Iniciar sesión con Google</button>
+                    <div id="raya__uno"></div>o<div id="raya__dos"></div>
+                    <div class="input-group" id="input__border">
+                       <input id="input__place" type="text" class="form-control" placeholder="dirección de correo electrónico">
+                       <input id="input__place" type="text" class="form-control" placeholder="contraseña">
+                    </div>
+                    <input type="checkbox">Recordarme
+                    <a href="#">Can't log in?</a>
+                    <button type="button" class="btn btn-danger" id="button_is_width">Inicia sesión</button>
+                    <div class="container-fluid" id="border__top">
+                      <div class="row">
+                        <div class="col-xs-8">
+                           <a href="#">¿No tienes una cuenta?</a>
+                        </div>
+                        <div class="col-xs-4">
+                           <button type="button" class="btn btn-default">Regístrate</button>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,7 +68,7 @@
                     <p>Alojamientos, experiencias y lugares, todo en una sola aplicación</p>
                     <a href="#">Descubre las últimas novedades</a>
                 </div>
-			<div><img src="/assets/img/slider-1.jpg" class="header__img_slider"></div>  
+			    <div><img src="/assets/img/slider-1.jpg" class="header__img_slider"></div>
             </div>
 		</div>
 	<script type="text/javascript" src="js/main.js"></script>

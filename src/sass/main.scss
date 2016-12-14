@@ -64,4 +64,65 @@ body {
 	
 }
 
+#modal__border{
+	width: 400px;
+	height: 450px;
+	padding: 4%;
+}
+#button_fb_width{
+	width: 100%;
+	background-color: #3B5998;
+	height: 60px;
+	margin-bottom: 7px;
+}
+#button_fb_width:hover{
+	background-color: #4568b2;
+}
+#google_imagen{
+	width: 20px;
+	height: 20px;
+}
+#button_gl_width{
+	width: 100%;
+	height: 50px;
+}
+#input__border{
+	border:1px solid #AAAAAA;
+	border-radius: 3px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+#input__place{
+	border:none;
+	height: 60px;
+}
+#btn__border{
+	border:none;
+}
+#button_is_width{
+	width: 100%;
+	height: 60px;	
+}
+#border__top{
+	border-top: 1px solid #DCE0D0;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+#raya__uno{
+	border:1px solid #DCE0D0;
+	width: 45%;
+	float: left;
+	margin-top: 8px;
+	margin-right: 10px;
+}
+#raya__dos{
+	border:1px solid #DCE0D0;
+	width: 45%;
+	margin-top: 8px;
+	float: right;
+}
+
+
+
+
 //fin header
