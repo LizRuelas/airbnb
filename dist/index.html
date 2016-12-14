@@ -5,6 +5,11 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="initial-scale=1">
+		<!--login-->
+		<meta name="google-signin-client_id" content="766741656408-rf4oag140490pdua7aanu3dvbm8ggfc6.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<!--login-->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="shortcut icon" href="/assets/img/logo.png">
 	</head>	
@@ -30,7 +35,12 @@
 		      	<li><a href="#">Conviertete en anfitrión</a></li>
 		      	<li><a href="#">Ayuda</a></li>
 		        <li><a href="#">Regístrate</a></li>
-		        <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Iniciar sesión</a></li>
+		        <li id="sesion"><a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Iniciar sesión</a></li>
+		        <li id="status"></li>
+		        <li><a id="facebookLogout" role="button">Logout</a></li>
+		        <li id="statusGmail">
+		        	<span id="name"></span><span id="outGmail"></span>
+		        </li>
 		      </ul>
 		    </div>
 		  </div>
@@ -38,8 +48,8 @@
         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content modal__border"> 
-                    <button type="button" class="modal__btn_face btn btn-primary"><span class="footer__margin fa fa-facebook"></span>&nbsp&nbsp Iniciar sesión con Facebook</button>
-                    <button type="button" class="modal__btn_google btn btn-default"><img id="google_imagen" src="/assets/img/google.png">&nbsp&nbsp Iniciar sesión con Google</button>
+                    <button id="facebookLogin" type="button" class="modal__btn_face btn btn-primary"><span class="footer__margin fa fa-facebook"></span>&nbsp&nbsp Iniciar sesión con Facebook</button>
+                    <button id="customBtn" type="button" class="modal__btn_google btn btn-default"><img id="google_imagen" src="/assets/img/google.png">&nbsp&nbsp Iniciar sesión con Google</button>
                     <div class="modal__raya__uno"></div>o<div class="modal__raya__dos"></div>
                     <div class="input-group modal__input_border">
                        <input type="text" class="form-control" placeholder="dirección de correo electrónico">
@@ -418,7 +428,9 @@
 				</div>
 			</div>	
 		</footer>
-		
+
+	<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+	<script src="https://apis.google.com/js/api:client.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
