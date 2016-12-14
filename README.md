@@ -42,6 +42,7 @@ Somos estudiantes de Laboratoria y tenemos como objetivo replicar la página de 
 	* Alejandra Lopez
 	* Jennifer Jara
 	* Karol Orrillo
+	* Liz Ruelas
 	* Paola Quispe
 	* Sandy Ciquero
 
