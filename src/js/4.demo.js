@@ -261,7 +261,7 @@ function busquedaDepartamentos() {
         fechaInicio: "06/12/2016",
         fechaSalida: "06/12/2017",
         direccion: "Calle 2 de Mayo 864",
-        distrito: "Lima",
+        distrito: "Miraflores",
         cuartos: "2",
         baños: "3",
         contacto: "Leila Torres",
@@ -272,7 +272,7 @@ function busquedaDepartamentos() {
         fechaInicio: "06/12/2016",
         fechaSalida: "06/12/2017",
         direccion: "Calle Coronel Inclán 227",
-        distrito: "Lima",
+        distrito: "Miraflores",
         cuartos: "2",
         baños: "3",
         contacto: "Julio Sánchez",
@@ -292,48 +292,49 @@ function busquedaDepartamentos() {
 
 function busquedaCuartosCompartidos() {
     var obj1 = {
-        direccion: "Calle Elías Aguirre 419",
+        direccion: "Pasaje Rodadero 110",
+        provincia: "Lima",
         distrito: "Lince",
         huespedes: "6",
         baños: 2,
-        latitud: -12.115735,
-        longitud: -77.034758
+        latitud: -12.086804,
+        longitud: -77.031597
     };
     var obj2 = {
-        direccion: "Calle Elías Aguirre 156",
+        direccion: "av. militar 1933",
         provincia: "Lima",
         distrito: "Lince",
         huespedes: "6",
         baños: 3,
-        latitud: -12.118442,
-        longitud: -77.034736
+        latitud: -12.083416,
+        longitud: -77.031396
     };
     var obj3 = {
-        direccion: "Jr. Jorge Chávez 200",
+        direccion: "av. juan pardo de zela 444",
         provincia: "Lima",
         distrito: "Lince",
         huespedes: "6",
         baños: 1,
-        latitud: -12.119984,
-        longitud: -77.036903
+        latitud: -12.083319,
+        longitud: -77.032163
     };
     var obj4 = {
-        direccion: "Calle Francia 360",
+        direccion: "José Bernardo Alcedo 401",
         provincia: "Lima",
         distrito: "Lince",
         huespedes: "6",
         baños: 2,
-        latitud: -12.122260,
-        longitud: -77.034553
+        latitud: -12.084283,
+        longitud: -77.032191
     };
     var obj5 = {
-        direccion: "Libertad 115",
+        direccion: "Calle Risso 347",
         provincia: "Lima",
         distrito: "Lince",
         huespedes: "6",
         baños: 2,
-        latitud: -12.120403,
-        longitud: -77.032686
+        latitud: -12.085406,
+        longitud: -77.032533
     };
 
     var Array = [];
