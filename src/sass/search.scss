@@ -55,9 +55,28 @@ section{
 				width: 100%;
 			}
 			.dropdown-menu{
-				width: 300px;
+				width: 350px;
 				.drop{
-					padding:3%;
+					font-size: 16px;
+					.select-pax{	
+					    padding-top: 15px;
+					    padding-bottom: 15px;
+					    div{
+					    	padding:0;
+					    }
+					    span{
+					    	text-align:right;
+					    }
+					}
+					.cuadro{
+						    padding-top: 5px;
+						    padding-bottom: 5px;
+						div{
+							border:1px solid gray;
+							padding-top: 5px;
+					    	padding-bottom:5px;
+						}
+					}
 				}
 			}
 		}
