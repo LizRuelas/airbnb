@@ -17,8 +17,8 @@ $ancor-footer-hover: #09888F;
   height: $larg;
 }
 /**************/
-.scroll-gal {
-  margin: 2% 0%;
+.exp__content {
+  margin: 4% 0%;
   .viewport {
     position: relative;
     height: 450px;
@@ -48,14 +48,14 @@ $ancor-footer-hover: #09888F;
 .aloja__img{
   @include anchoimg (350px, 250px);
 }
-.scroll-gal .move-left,
-.scroll-gal .move-right {
+.exp__content .move-left,
+.exp__content .move-right {
   margin-top: 30px;
   cursor: pointer;
   width: 100px;
   height: 300px;
 }
-.scroll-gal .move-left {
+.exp__content .move-left {
   background-position: -26px -188px;
 }
 .exp__lft {
@@ -81,17 +81,16 @@ $ancor-footer-hover: #09888F;
 .btn__anfi{
   padding-top: 8px;
   padding-bottom: 8px;
-  color: #484848;
-  margin: 0px;
+  color: $color-blanco;
   padding-right: 24px;
   padding-left: 24px;
   border-radius: 64px;
-  background: #00A699;
+  background: $bg-verde;
 }
-#footBorder{
+#ft__border{
 	border-top: 1px solid $color-footer;
 	padding-top: 40px;
-  #footBottom{
+  #ft__bottom{
     border-bottom: 1px solid $color-footer;
     padding-bottom: 40px;
     margin-bottom: 20px;
