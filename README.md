@@ -1,7 +1,7 @@
 # airbnb - laboratoria
 
 
-[1]: /assets/img/banner.png
+![](/assets/img/banner.png)
 ## Proyecto
 1. Objetivo.
 2. Usuario.
