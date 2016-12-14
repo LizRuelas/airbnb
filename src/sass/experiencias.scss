@@ -18,7 +18,7 @@ $ancor-footer-hover: #09888F;
 }
 /**************/
 .exp__content {
-  margin: 4% 0%;
+  margin: 6% 0%;
   .viewport {
     position: relative;
     height: 450px;
@@ -115,4 +115,7 @@ $ancor-footer-hover: #09888F;
     }
   }
   li{list-style: none;}
+  .ft__small{
+    margin: 3% 0%;
+  }
 }

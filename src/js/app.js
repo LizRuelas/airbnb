@@ -23,7 +23,7 @@ $(document).ready(function(){
 
   //slider
   var dly = 200;
-    $('.scroll-gal').each(function() { // caring about multi instances
+    $('.exp__content').each(function() { // caring about multi instances
         var el = $(this),
         ul = $('ul', el);
         $('div', el).not('.vewport').click(function() {
