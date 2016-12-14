@@ -44,3 +44,15 @@ Somos estudiantes de Laboratoria y tenemos como objetivo replicar la página de 
 	* Karol Orrillo
 	* Paola Quispe
 	* Sandy Ciquero
+
+### Instalar
+	* Tambien en el proceso de desarrollo trabajamos con Node.js .
+
+	* Para instalar las dependemcias, utiliza este comando en la terminal de Git:
+		npm install
+
+	* Para ejecutar las tareas de Gulp:
+		gulp dev
+
+	* Para levatar el servidor de forma local:
+		node server.js
