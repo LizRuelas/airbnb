@@ -136,7 +136,6 @@ var geocodeResult= function(results, status) {
         map: map1
       });
     }
-
 }
 
 $(document).ready(load);
