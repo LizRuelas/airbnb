@@ -2,6 +2,13 @@
 body{
 	box-sizing:border-box;
 }
+section{
+  .container-fluid{
+    .col-lg-7{
+       overflow-y: scroll;
+    }
+  }
+}
 header{
 	height:61px;
 	display:block;
@@ -42,6 +49,9 @@ section{
 	.filter{
 		padding:2%;
 	}
+  .switcher{
+    padding:2%;
+  }
 	.date{
 		padding:2%;
 		input{
@@ -80,9 +90,6 @@ section{
 				}
 			}
 		}
-	.switch{
-		padding:2%;
-	}
 	}
 	.room{
 		padding:2%;
