@@ -1,17 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import "_variables";
 @import "_mixins";
 
 //inicio header
 * {
-	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
 }
 
 .header__logo {
-	width: 1.3em;
+	width: 1.8em;
+}
+
+.header__menu {
+	border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
+	color:$color-texto-slider-1;
 }
 
 .header__img_slider { 
 	width: 100%;
 }
+
+.header__text {
+	top: 7rem;
+    left: 15rem;
+	position: absolute;
+	color: $color-texto-slider-1;
+
+	h1 {
+		font-size: 3.2em;
+	    font-weight: bolder;
+	}
+
+	p {
+		font-size: 1.2em;
+	    font-family: sans-serif;
+	    color: $color-p-slider-1;	
+	    margin-top: $margin-top-slider;
+	}
+
+	a {
+	    padding: 0.8%;
+	    border-radius: 25px;
+	    display: inline-block;
+		border: 2px solid #ccc;
+	    color: $color-texto-slider-1;
+	    margin-top: $margin-top-slider;
+	}
+
+	a:link {
+		text-decoration: none;
+	}
+	
+}
+
+.modal__border {
+	width: 500px;
+	height: 500px;
+	padding: 12%;
+	right: 80px;
+}
+
+.modal__btn_face {
+	@include modal-btn($color-facebook-btn, 1%);
+
+	&:hover {
+		background-color:$color-hover-btn-facebook;
+	}
+}
+
+
+.modal__btn_google {
+		@include modal-btn($color-blanco, 2%);
+
+		img {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+
+.form-control {
+		margin-bottom: 1%;
+}
+
+.modal__raya__uno {
+	@include modal-borde(8px, left);
+	margin-right: 10px;
+}
+
+.modal__raya__dos {
+	@include modal-borde(8px, right);
+}
+
+.modal__input_border {
+	width: 100%;
+	margin-top: 1.5%;
+	display: block;
+
+	input {
+		height: 60px;
+		border: $border-btn;
+	}	
+}
+
+.modal__top {
+	div {
+		margin-top: $margin-top-slider;
+	}
+	button {
+		border: 1px solid #ff5a5f;
+		color: #ff5a5f;
+	}
+}
+
+.modal__btn_sesion {
+	@include modal-btn($color-sesion-btn, 5%);
+	margin-top: 2%;
+
+	&:hover {
+		background-color: $color-hover-btn-sesion;
+	}
+}
+
+.modal__border_top {
+	border-top: $border-btn;
+	width: 100%;
+	padding-top: 10px;
+}
+
+
+//fin header

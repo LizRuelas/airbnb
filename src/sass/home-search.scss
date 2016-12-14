@@ -1,0 +1,52 @@
+/****VARIABLES****/
+$color-border: #dce0e0;
+$color-bnb: #FF5A5F;
+$color-blanco: #fff;
+
+/****MIXIN****/
+@mixin search-borde($tam, $color, $tam-r){
+	border: $tam solid $color;
+	border-radius: $tam-r;
+}
+/*********************************/
+.search__container{
+	@include search-borde(1px, $color-border, 5px);
+	padding: 2%;
+	margin: 2% 0%;
+}
+.search__place, .search__date{
+	border-right: 1px solid $color-border;
+}
+.search__btn, .search__modal__btn{
+	background-color: $color-bnb;
+	color: $color-blanco;
+}
+.search__btn{
+	a{
+		color: $color-blanco;
+	}
+}
+.search__container span{display: inline-block;}
+.search__place input{width: 100%;}
+.search__date input{width: 90%;}
+.search__container input, .search__mini input{
+	border: none;
+	border-bottom: 2px solid $color-border;
+    font-size: 19px;
+}
+.search__mini{
+	@include search-borde(1px, $color-border, 5px);
+	padding: 2%;
+	margin: 2% 0%;
+}
+.search__btn__big{
+	width: 100%;
+    border: none;
+    background: transparent;
+}
+.search__modal__btn{
+	margin: 2% 0%;
+}
+.modal-body{
+	padding: 10% 4%;
+}
