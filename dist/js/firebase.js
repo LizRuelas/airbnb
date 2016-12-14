@@ -6,6 +6,8 @@ $(document).ready(function(){
 
 
 
+    var result = [];
+
     var contactTemplate ="<div class='row'>" +
         "<div class='col s10' >"+
         "<ul style='list-style-type:none'>"+
@@ -52,6 +54,11 @@ $(document).ready(function(){
             .endAt(bla+"\uf8ff").on('value', function(response) {
 
             var data = response.val();
+
+            intersect(data);
+
+
+
             var la = $("#la");
             var contenedorData = "";
 
@@ -66,5 +73,9 @@ $(document).ready(function(){
         });
 
     });
+
+    function intersect(data){
+        console.log(data);
+    }
 
 });
