@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var request = require('request');
+//var request = require('request');
 
 
 // prepare server
@@ -11,6 +11,8 @@ app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redi
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 app.use('/assets', express.static(__dirname+'/assets'));
 
-app.listen(3029 , function(){
+var port = process.env.PORT || 3029;
+
+app.listen(port , function(){
   console.log("encendido");
 });

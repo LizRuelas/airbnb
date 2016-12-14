@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Yape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--     <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/contact.css"> -->
+</head>
+<body>
+    <section class="search">
+        <input placeholder="Buscar" class="buscar">
+    </section>
+    <input type="button" placeholder="Buscar" class="enviar" value="Buscar Lugar"><br>
+
+    <span>Habiación privada</span> <input type="checkbox" id="checkbox1">
+    <span>Habitacion Compartida</span><input type="checkbox" id="checkbox2">
+    <span>Casa entera</span><input type="checkbox" id="checkbox3">
+
+ <section class="listado">
+        <div class="container">
+            <div id="la"></div>
+        </div>
+    </section> 
+    <div style="width:700px;height:500px;"  id="mapa"></div>
+</body>
+
+
+<!--- Scripts-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBsgz7-hM8qnXDoLAqijehuLVBNx1ZUZKk",
+        authDomain: "airbnb-8c1dc.firebaseapp.com",
+        databaseURL: "https://airbnb-8c1dc.firebaseio.com",
+        storageBucket: "airbnb-8c1dc.appspot.com",
+        messagingSenderId: "597759055941"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUrCrFxDQmkR0-r9zCC-vJSD4d_PgXRZU"
+    async defer></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/firebase.js"></script>
+<!--- Fin Scripts-->
+</body>
+</html>
