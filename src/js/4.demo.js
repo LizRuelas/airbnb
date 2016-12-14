@@ -12,20 +12,14 @@ var cargaExitosa = function(posicion) {
     firstPosition = latlon;
     var mapa = document.getElementById('mapa')
     var myOptions = {
-        center:latlon,zoom:14,
+        center:latlon,zoom:12,
         mapTypeId:google.maps.MapTypeId.ROADMAP,
-        mapTypeControl:false,
-        zoomControl:false,
-        streetViewControl:false,
+        mapTypeControl:true,
+        zoomControl:true,
+        streetViewControl:true,
     };
     var mostrarMap = new google.maps.Map(document.getElementById('mapa'), myOptions);
 
-  //   var iconBase = "img/";
-  //   var marker = new google.maps.Marker({
-  //   position: latlon,
-  //   map: mostrarMap,
-  //   icon: iconBase + 'user.png'
-  // });
 };
 
 var error = function (error) {
@@ -101,7 +95,7 @@ var geocodeResult= function(results, status) {
       var features = [];
        var array = busquedaCuartosCompartidos();
        var mapOptions = {
-            zoom: 16,
+            zoom: 14,
             center:  new google.maps.LatLng(firstPosition.lat(), firstPosition.lng())
        };
        var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
@@ -121,21 +115,21 @@ var geocodeResult= function(results, status) {
        });
     });
 
-    function addMarker(feature) {
-        var iconBase = '../asssets/img/';
-        var icons = {
-          parking: {
-            icon: iconBase + 'circulo.png'
-          }
-        };
-        var map1 = new google.maps.Map(document.getElementById('mapa'));
-      // map = new google.maps.Map(document.getElementById('mapa'),
-      var marker = new google.maps.Marker({
-        position: feature.position,
-        icon: icons[feature.type].icon,
-        map: map1
-      });
-    }
+// function addMarker(feature) {
+    //     var iconBase = '../asssets/img/';
+    //     var icons = {
+    //       parking: {
+    //         icon: iconBase + 'circulo.png'
+    //       }
+    //     };
+    //     var map1 = new google.maps.Map(document.getElementById('mapa'));
+    //   // map = new google.maps.Map(document.getElementById('mapa'),
+    //   var marker = new google.maps.Marker({
+    //     position: feature.position,
+    //     icon: icons[feature.type].icon,
+    //     map: map1
+    //   });
+    // }
 }
 
 $(document).ready(load);
