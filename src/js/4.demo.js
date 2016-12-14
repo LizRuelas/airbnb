@@ -13,17 +13,12 @@ var funcionError = function (error) {
     console.log(error);
 };
 
-var contactTemplate ="<div class='row'>" +
-        "<div class='col s10' >"+
+var contactTemplate ="<div class='col-xs-6' >"+
         "<ul style='list-style-type:none'>"+
         "<li>{{distrito}}</li>"+
         "<li>{{direccion}}</li>"+
         "<li>{{tipo}}</li>"+
         "</ul>"+
-        "</div>"+
-        "<div class='col s2'>"+
-        "<a class='contactos' id='{{email}}'><i class='material-icons'>keyboard_arrow_right</i></a>"+
-        "</div>" +
         "</div>";
 
 
@@ -158,7 +153,7 @@ function showResult(){
 
 
         map = new google.maps.Map(document.getElementById('mapa'), {
-            zoom: 14,
+            zoom: 11,
             center: new google.maps.LatLng(-12.079986982830766, -77.09998252678224),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
