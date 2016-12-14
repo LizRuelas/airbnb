@@ -1,0 +1,42 @@
+$bg-facebook : #3B5998;
+
+#facebookLogin{
+	background-color: $bg-facebook;
+	border:1px solid $bg-facebook;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+	padding: 20px 90px; 		
+	font-size:16px;
+	cursor: pointer;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.fb {
+  position: absolute;
+	top: 18px;
+	left: 21px;
+	font-size: 21px;
+}
+
+#customBtn {
+      background: white;
+      color: #444;
+      border-radius: 5px;
+      border: 1px solid #888;
+      cursor: pointer;
+      padding: 20px 102px;
+    }
+.gm {
+  position:absolute;
+  left: 21px;
+  width: 22px;
+}
+.buttonText { 
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+#statusGmail {
+  float: right;
+}

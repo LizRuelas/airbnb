@@ -1,0 +1,15 @@
+//inicio header
+@mixin modal-btn($color, $margin){
+	width: 100%;
+	height: 60px;	
+	background: $color;
+	margin-bottom: $margin;
+}
+
+@mixin modal-borde($margin, $float){
+	border-top:1px solid #DCE0D0;
+	width: 45%;
+	margin-top: $margin;
+	float: $float;
+}
+//fin header

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Airbnb</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1">
+		<!--login-->
+		<meta name="google-signin-client_id" content="766741656408-rf4oag140490pdua7aanu3dvbm8ggfc6.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<!--login-->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="shortcut icon" href="/assets/img/logo.png">
+	</head>	
+	<body>
+		<nav class="header__menu navbar navbar-default navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><img src="/assets/img/logo.png" class="header__logo"></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <form class="navbar-form navbar-left">
+		        <div class="form-group">
+		          <input type="text" class="form-control" placeholder="Search">
+		        </div>
+		      </form>
+		      <ul class="nav navbar-nav navbar-right">
+		      	<li><a href="#">Conviertete en anfitrión</a></li>
+		      	<li><a href="#">Ayuda</a></li>
+		        <li><a href="#">Regístrate</a></li>
+		        <li id="sesion"><a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Iniciar sesión</a></li>
+		        <li id="status"></li>
+		        <li><a id="facebookLogout" role="button">Logout</a></li>
+		        <li id="statusGmail">
+		        	<span id="name"></span><span id="outGmail"></span>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content modal__border"> 
+                    <button id="facebookLogin" type="button" class="modal__btn_face btn btn-primary"><span class="footer__margin fa fa-facebook"></span>&nbsp&nbsp Iniciar sesión con Facebook</button>
+                    <button id="customBtn" type="button" class="modal__btn_google btn btn-default"><img id="google_imagen" src="/assets/img/google.png">&nbsp&nbsp Iniciar sesión con Google</button>
+                    <div class="modal__raya__uno"></div>o<div class="modal__raya__dos"></div>
+                    <div class="input-group modal__input_border">
+                       <input type="text" class="form-control" placeholder="dirección de correo electrónico">
+                       <input type="text" class="form-control" placeholder="contraseña">
+                    </div>
+                    <div class="row modal__top">
+                        <div class="col-xs-8">
+                            <input type="checkbox">Recordarme
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#">Can't log in?</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-danger modal__btn_sesion">Inicia sesión</button>
+                    <div class="container-fluid  modal__border_top">
+                      <div class="row modal__top">
+                        <div class="col-xs-8">
+                           <a href="#">¿No tienes una cuenta?</a>
+                        </div>
+                        <div class="col-xs-4">
+                           <button type="button" class="btn btn-default">Regístrate</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="header__sliders">
+            <div class="header__slider_uno">
+    			<div class="header__text" id="cambio-navbar">
+                    <h1>Te espera un mundo de viajes inolvidables.</h1>
+                    <p>Alojamientos, experiencias y lugares, todo en una sola aplicación</p>
+                    <a href="#">Descubre las últimas novedades</a>
+                </div>
+			    <div><img src="/assets/img/slider-1.jpg" class="header__img_slider"></div>
+            </div>
+		</div>
+		<section class="container" id="search">
+			<div class="search__container visible-sm visible-md visible-lg hidden-xs">
+				<div class="row">
+					<div class="col-xs-4 search__place">
+						<p>Donde</p>
+						<input type="text" name="location" placeholder="Destino, ciudad, dirección">
+					</div>
+					<div class="col-xs-4 search__date">
+						<p>Cuando</p>
+						<div class="row">
+							<div class="col-xs-6">
+								<input class="verFecha" type="text" name="llegada" placeholder="Llegada">
+							</div>
+							<div class="col-xs-6">
+								<input class="verFecha" type="text" name="salida" placeholder="Salida">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 search__go">
+						<div class="row">
+							<div class="col-xs-6">
+								<p>Huéspedes</p>
+								<select class="selectpicker">
+								  <option>1 huésped</option>
+								  <option>2 huéspedes</option>
+								  <option>3 huéspedes</option>
+								  <option>4 huéspedes</option>
+								  <option>5 huéspedes</option>
+								  <option>6 huéspedes</option>
+								  <option>7 huéspedes</option>
+								</select>	
+							</div>
+							<div class="col-xs-6">
+								<button class="btn search__btn center-block"><a href="/search.html">Buscar</a></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="search__mini visible-xs hidden-sm hidden-md hidden-lg">
+				<button type="button" class="search__btn__big text-left" data-toggle="modal" data-target="#myModal"><a href="/search.html">Buscar</a></button>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Búsqueda</h4>
+				      </div>
+				      <div class="modal-body">
+						<div class="row">
+							<div class="col-xs-12">
+								<label for="places">Lugares</label>
+								<input type="text" id="places">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div>Cuando</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<input class="verFecha" type="text" placeholder="Llegada">
+									</div>
+									<div class="col-xs-6">
+										<input class="verFecha" type="text" placeholder="Salida">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div>Huéspedes</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<select class="selectpicker">
+										  <option>1 huésped</option>
+										  <option>2 huéspedes</option>
+										  <option>3 huéspedes</option>
+										  <option>4 huéspedes</option>
+										  <option>5 huéspedes</option>
+										  <option>6 huéspedes</option>
+										  <option>7 huéspedes</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn search__modal__btn btn-lg btn-block">Block level button</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</section>
+		<section id="exp__sect" class="container">
+			<div class="exp__content">
+				<h3>Experiencias</h3>
+			    <div class="glyphicon glyphicon-menu-right exp__rgt"></div>
+			    <div class="glyphicon glyphicon-menu-left exp__lft"></div>
+			    <div class="viewport">
+			        <ul class="lsn">
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/exp_uno.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$6611</strong> MXNAsian food & culinary · 3 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/exp_dos.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$3046</strong> MXNTrail running & fitness · 4 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/exp_tres.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$3097</strong> MXNSweets & tradition · 2 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image"> 
+			                    <img src="../assets/img/exp_cuatro.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$4297</strong> MXNBeauty & make up · 2 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/exp_cinco.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$12604</strong> MXNHiking & horseback riding</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/exp_seis.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$5020</strong> MXNGrime & clubbing · 3 días</p>
+			            </li>
+			        </ul>
+			        <div class="clr"></div>
+			    </div>
+			</div>
+			<div class="exp__content">
+				<h3>Alojamientos</h3>
+			    <div class="glyphicon glyphicon-menu-right aloja__rgt"></div>
+			    <div class="glyphicon glyphicon-menu-left aloja__lft"></div>
+			    <div class="viewport viewport-2">
+			        <ul class="lsn">
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/aloja-1.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$6611</strong> Casa/apto. entero en Donostia / San Sebastián</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/aloja-2.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$3046</strong> Casa/apto. entero en Hvar</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/aloja-3.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$3097</strong> Casa/apto. entero en Edinburgh</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image"> 
+			                    <img src="../assets/img/aloja-4.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$4297</strong> Casa/apto. entero en Maioris Decima</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/aloja-5.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$12604</strong> Casa/apto. entero en Armenia</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/aloja-6.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$5020</strong> Casa/apto. entero en Vienna</p>
+			            </li>
+			        </ul>
+			        <div class="clr"></div>
+			    </div>
+			</div>
+			<div class="exp__content">
+				<div class="row">
+					<div class="col-xs-5">
+						<h3>Ser anfitrión te abre un mundo lleno de oportunidades</h3>
+						<p>Gana dinero compartiendo tu espacio libre con los huéspedes.</p>
+						<button class="btn__anfi"><span>Cuánto puedes ganar</span></button>
+					</div>
+					<div class="col-xs-7">
+						<img class="img-responsive" src="/assets/img/anfitrion.jpg" alt="anfitrion">
+					</div>
+				</div>
+			</div>
+			<div class="exp__content">
+				<h3>Destino Destacados</h3>
+			    <div class="glyphicon glyphicon-menu-right exp__rgt"></div>
+			    <div class="glyphicon glyphicon-menu-left exp__lft"></div>
+			    <div class="viewport">
+			        <ul class="lsn">
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/dest-1.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>Paris</strong></p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/dest-2.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>La Habana</strong></p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/dest-3.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>London</strong></p>
+			            </li>
+			            <li>
+			                <a href="#" class="image"> 
+			                    <img src="../assets/img/dest-4.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>Paris</strong></p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/dest-5.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>Ciudad del Cabo</strong></p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/dest-6.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>Miami</strong></p>
+			            </li>
+			        </ul>
+			        <div class="clr"></div>
+			    </div>
+			</div>
+		</section>
+		<footer class="container-fluid" id="ft__border">
+			<div class="container" id="ft__Bottom">
+				<div class="row">
+					<div class="col-sm-3 col-xs-12">
+						<div class="row">
+							<div class="col-sm-12 col-xs-6">
+								<select class="selectpicker" data-size="15">
+				  					<option>Español</option>
+				  					<option>Bahasa Indonesia</option>
+				  					<option>Bahasa Melayu</option>
+				  					<option>Català</option>
+				  					<option>Dansk</option>
+				  					<option>Deutsch</option>
+				  					<option>English</option>
+				  					<option>Frances</option>
+				  					<option>Italiano</option>
+				  					<option>Magyar</option>
+				  					<option>Nederlands</option>
+				  					<option>Norsk</option>
+				  					<option>Polski</option>
+				  					<option>Portugues</option>
+				  					<option>Suomi</option>
+				  					<option>Svenska</option>
+				  					<option>Turco</option>
+				  					<option>Islenska</option>
+				  					<option>Cestina</option>
+								</select>
+							</div>
+							<div class="col-sm-12 col-xs-6">
+								<select class="selectpicker" data-size="15">
+				  					<option>PEN</option>
+				  					<option>AED</option>
+				  					<option>ARS</option>
+				  					<option>AUD</option>
+				  					<option>BGN</option>
+				  					<option>BRL</option>
+				  					<option>CAD</option>
+				  					<option>CHF</option>
+				  					<option>CLP</option>
+				  					<option>CNY</option>
+				  					<option>COP</option>
+				  					<option>CRC</option>
+				  					<option>CZK</option>
+				  					<option>DKK</option>
+				  					<option>EUR</option>
+				  					<option>GBP</option>
+				  					<option>HKD</option>
+				  					<option>HRK</option>
+				  					<option>HUF</option>
+								</select>
+							</div>
+						</div>					
+					</div>
+					<div class="col-sm-3 hidden-xs">
+						<h4>Airbnb</h4>
+						<a href="#"><li>Acerca de</li></a>
+						<a href="#"><li>Empleo</li></a>
+						<a href="#"><li>Prensa</li></a>
+						<a href="#"><li>Políticas</li></a>
+						<a href="#"><li>Ayuda</li></a>
+					</div>
+					<div class="col-sm-3 hidden-xs">
+						<h4>Descubre Airbnb</h4>
+						<a href="#"><li>Confianza y seguridad</li></a>
+						<a href="#"><li>Crédito para viajar</li></a>
+						<a href="#"><li>Airbnb Action</li></a>
+						<a href="#"><li>Viajes de negocios</li></a>
+						<a href="#"><li>Guías</li></a>
+					</div>
+					<div class="col-sm-3 hidden-xs">
+						<h4>Hospedar</h4>
+						<a href="#"><li>Razones para hospedar</li></a>
+						<a href="#"><li>Hospitalidad</li></a>
+						<a href="#"><li>Ser un anfitrión</li></a>
+						<a href="#"><li>responsable</li></a>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="ft__small">
+					<div class="row">
+						<div class="col-xs-3">
+							<img id="brand" src="../assets/img/brand.png"><p>&nbsp &nbsp © Airbnb, Inc.</p>
+						</div>
+						<div class="col-xs-9 text-right">
+							<a class="footer__margin" href="#"><span>Términos y Privacidad</span></a>
+							<a class="footer__margin" href="#"><span>Mapa del sitio</span></a>
+							<a class="footer__margin fa fa-facebook" href="#"></a>
+							<a class="footer__margin fa fa-twitter" href="#"></a>
+							<a class="footer__margin fa fa-instagram" href="#"></a>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</footer>
+
+	<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+	<script src="https://apis.google.com/js/api:client.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
+>>>>>>> home-page
