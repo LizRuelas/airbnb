@@ -52,149 +52,204 @@
 			<div><img src="/assets/img/slider-1.jpg" class="header__img_slider"></div>  
             </div>
 		</div>
-		<section id="search">
-			<div class="container-fluid">
-				<div class="search__container visible-sm visible-md visible-lg hidden-xs">
-					<div class="row">
-						<div class="col-xs-4 search__place">
-							<p>Donde</p>
-							<input type="text" name="location" placeholder="Destino, ciudad, dirección">
-						</div>
-						<div class="col-xs-4 search__date">
-							<p>Cuando</p>
-							<div class="row">
-								<div class="col-xs-6">
-									<input class="verFecha" type="text" name="llegada" placeholder="Llegada">
-								</div>
-								<div class="col-xs-6">
-									<input class="verFecha" type="text" name="salida" placeholder="Salida">
-								</div>
+		<section class="container" id="search">
+			<div class="search__container visible-sm visible-md visible-lg hidden-xs">
+				<div class="row">
+					<div class="col-xs-4 search__place">
+						<p>Donde</p>
+						<input type="text" name="location" placeholder="Destino, ciudad, dirección">
+					</div>
+					<div class="col-xs-4 search__date">
+						<p>Cuando</p>
+						<div class="row">
+							<div class="col-xs-6">
+								<input class="verFecha" type="text" name="llegada" placeholder="Llegada">
 							</div>
-						</div>
-						<div class="col-xs-4 search__go">
-							<div class="row">
-								<div class="col-xs-6">
-									<p>Huéspedes</p>
-									<select class="selectpicker">
-									  <option>1 huésped</option>
-									  <option>2 huéspedes</option>
-									  <option>3 huéspedes</option>
-									  <option>4 huéspedes</option>
-									  <option>5 huéspedes</option>
-									  <option>6 huéspedes</option>
-									  <option>7 huéspedes</option>
-									</select>	
-								</div>
-								<div class="col-xs-6">
-									<button class="btn search__btn"><a href="/search.html">Buscar</a></button>
-								</div>
+							<div class="col-xs-6">
+								<input class="verFecha" type="text" name="salida" placeholder="Salida">
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="search__mini visible-xs hidden-sm hidden-md hidden-lg">
-					<button type="button" class="search__btn__big text-left" data-toggle="modal" data-target="#myModal">Buscar</button>
-					<!-- Modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-					  <div class="modal-dialog" role="document">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					        <h4 class="modal-title" id="myModalLabel">Búsqueda</h4>
-					      </div>
-					      <div class="modal-body">
-							<div class="row">
-								<div class="col-xs-12">
-									<label for="places">Lugares</label>
-									<input type="text" id="places">
-								</div>
+					<div class="col-xs-4 search__go">
+						<div class="row">
+							<div class="col-xs-6">
+								<p>Huéspedes</p>
+								<select class="selectpicker">
+								  <option>1 huésped</option>
+								  <option>2 huéspedes</option>
+								  <option>3 huéspedes</option>
+								  <option>4 huéspedes</option>
+								  <option>5 huéspedes</option>
+								  <option>6 huéspedes</option>
+								  <option>7 huéspedes</option>
+								</select>	
 							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<div>Cuando</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<input class="verFecha" type="text" placeholder="Llegada">
-										</div>
-										<div class="col-xs-6">
-											<input class="verFecha" type="text" placeholder="Salida">
-										</div>
-									</div>
-								</div>
+							<div class="col-xs-6">
+								<button class="btn search__btn"><a href="/search.html">Buscar</a></button>
 							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<div>Huéspedes</div>
-									<div class="row">
-										<div class="col-xs-12">
-											<select class="selectpicker">
-											  <option>1 huésped</option>
-											  <option>2 huéspedes</option>
-											  <option>3 huéspedes</option>
-											  <option>4 huéspedes</option>
-											  <option>5 huéspedes</option>
-											  <option>6 huéspedes</option>
-											  <option>7 huéspedes</option>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-							<button type="button" class="btn search__modal__btn btn-lg btn-block">Block level button</button>
-					      </div>
-					    </div>
-					  </div>
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class="search__mini visible-xs hidden-sm hidden-md hidden-lg">
+				<button type="button" class="search__btn__big text-left" data-toggle="modal" data-target="#myModal">Buscar</button>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Búsqueda</h4>
+				      </div>
+				      <div class="modal-body">
+						<div class="row">
+							<div class="col-xs-12">
+								<label for="places">Lugares</label>
+								<input type="text" id="places">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div>Cuando</div>
+								<div class="row">
+									<div class="col-xs-6">
+										<input class="verFecha" type="text" placeholder="Llegada">
+									</div>
+									<div class="col-xs-6">
+										<input class="verFecha" type="text" placeholder="Salida">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div>Huéspedes</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<select class="selectpicker">
+										  <option>1 huésped</option>
+										  <option>2 huéspedes</option>
+										  <option>3 huéspedes</option>
+										  <option>4 huéspedes</option>
+										  <option>5 huéspedes</option>
+										  <option>6 huéspedes</option>
+										  <option>7 huéspedes</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn search__modal__btn btn-lg btn-block">Block level button</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
 		</section>
-		<div class="container-fluid scroll-gal">
-		    <div class="glyphicon glyphicon-menu-right f-rgt"></div>
-		    <div class="glyphicon glyphicon-menu-left f-lft"></div>
-		    <div class="viewport">
-		        <ul class="lsn">
-		            <li>
-		                <a href="#" class="image">
-		                    <img src="../assets/img/exp_uno.jpg" width= 250 height= 400 />
-		                </a>
-		                <p><strong>$6611</strong> MXNAsian food & culinary · 3 días</p>
-		            </li>
-		            <li>
-		                <a href="#" class="image">
-		                    <img src="../assets/img/exp_dos.jpg" width= 250 height= 400 />
-		                </a>
-		                <p><strong>$3046</strong> MXNTrail running & fitness · 4 días</p>
-		            </li>
-		            <li>
-		                <a href="#" class="image">
-		                    <img src="../assets/img/exp_tres.jpg" width= 250 height= 400 />
-
-		                </a>
-		                <p><strong>$3097</strong> MXNSweets & tradition · 2 días</p>
-		            </li>
-		            <li>
-		                <a href="#" class="image"> 
-		                    <img src="../assets/img/exp_cuatro.jpg" width= 250 height= 400 />
-
-		                </a>
-		                <p><strong>$4297</strong> MXNBeauty & make up · 2 días</p>
-		            </li>
-		            <li>
-		                <a href="#" class="image">
-		                		<img src="../assets/img/exp_cinco.jpg" width= 250 height= 400 />
-		                </a>
-		                <p><strong>$12604</strong> MXNHiking & horseback riding</p>
-		            </li>
-		            <li>
-		                <a href="#" class="image">
-		                		<img src="../assets/img/exp_seis.jpg" width= 250 height= 400 />
-		                </a>
-		                <p><strong>$5020</strong> MXNGrime & clubbing · 3 días</p>
-		            </li>
-		        </ul>
-		        <div class="clr"></div>
-		    </div>
-		</div>
+		<section id="exp__sect" class="container">
+			<div class="scroll-gal">
+				<h3>Experiencias</h3>
+			    <div class="glyphicon glyphicon-menu-right exp__rgt"></div>
+			    <div class="glyphicon glyphicon-menu-left exp__lft"></div>
+			    <div class="viewport">
+			        <ul class="lsn">
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/exp_uno.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$6611</strong> MXNAsian food & culinary · 3 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/exp_dos.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$3046</strong> MXNTrail running & fitness · 4 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/exp_tres.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$3097</strong> MXNSweets & tradition · 2 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image"> 
+			                    <img src="../assets/img/exp_cuatro.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$4297</strong> MXNBeauty & make up · 2 días</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/exp_cinco.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$12604</strong> MXNHiking & horseback riding</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/exp_seis.jpg" class="exp__img"/>
+			                </a>
+			                <p><strong>$5020</strong> MXNGrime & clubbing · 3 días</p>
+			            </li>
+			        </ul>
+			        <div class="clr"></div>
+			    </div>
+			</div>
+			<div class="scroll-gal">
+				<h3>Alojamientos</h3>
+			    <div class="glyphicon glyphicon-menu-right aloja__rgt"></div>
+			    <div class="glyphicon glyphicon-menu-left aloja__lft"></div>
+			    <div class="viewport viewport-2">
+			        <ul class="lsn">
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/aloja-1.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$6611</strong> Casa/apto. entero en Donostia / San Sebastián</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/aloja-2.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$3046</strong> Casa/apto. entero en Hvar</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                    <img src="../assets/img/aloja-3.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$3097</strong> Casa/apto. entero en Edinburgh</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image"> 
+			                    <img src="../assets/img/aloja-4.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$4297</strong> Casa/apto. entero en Maioris Decima</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/aloja-5.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$12604</strong> Casa/apto. entero en Armenia</p>
+			            </li>
+			            <li>
+			                <a href="#" class="image">
+			                	<img src="../assets/img/aloja-6.jpg" class="aloja__img"/>
+			                </a>
+			                <p><strong>$5020</strong> Casa/apto. entero en Vienna</p>
+			            </li>
+			        </ul>
+			        <div class="clr"></div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-5">
+					<h3>Ser anfitrión te abre un mundo lleno de oportunidades</h3>
+					<p>Gana dinero compartiendo tu espacio libre con los huéspedes.</p>
+					<button class="btn__anfi"><span>Cuánto puedes ganar</span></button>
+				</div>
+				<div class="col-xs-7">
+					<img class="img-responsive" src="/assets/img/anfitrion.jpg" alt="anfitrion">
+				</div>
+			</div>
+		</section>
 		<footer class="container-fluid" id="footBorder">
 			<div class="container" id="footBottom">
 				<div class="row">

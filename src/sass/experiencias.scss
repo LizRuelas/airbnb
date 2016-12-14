@@ -6,40 +6,47 @@ $ancor-footer: #767676;
 $ancor-footer-hover: #09888F;
 
 /****MIXIN****/
-@mixin flotar($direc){
+@mixin flotar($direc, $alt){
 	float: $direc;
 	cursor: pointer;
-	top: 190px;
+	top: $alt;
 	font-size: 2em;
+}
+@mixin anchoimg ($anch, $larg){
+  width: $anch;
+  height: $larg;
 }
 /**************/
 .scroll-gal {
+  margin: 2% 0%;
   .viewport {
     position: relative;
     height: 450px;
     overflow: hidden;
     ul{
       position: absolute;
-      width: 2000%;
-
+      width: 500%;
       li{
         float: left;
         text-align: center;
         margin-right: 20px;
         list-style: none;
-
         a{
           color: $color-blanco;
-          img{
-            display: block;
-          }
         }
         p{margin-top: 10px;}
       }
     }
-    
-
   }
+  .viewport-2{
+    height: 300px;
+  }
+}
+.exp__img{
+  @include anchoimg (250px, 400px);
+}
+.aloja__img{
+  @include anchoimg (350px, 250px);
 }
 .scroll-gal .move-left,
 .scroll-gal .move-right {
@@ -51,11 +58,17 @@ $ancor-footer-hover: #09888F;
 .scroll-gal .move-left {
   background-position: -26px -188px;
 }
-.f-lft {
-  @include flotar(left)
+.exp__lft {
+  @include flotar(left, 190px);
 }
-.f-rgt {
-  @include flotar(right)
+.exp__rgt {
+  @include flotar(right, 190px);
+}
+.aloja__lft{
+  @include flotar(left, 100px);
+}
+.aloja__rgt{
+  @include flotar(right, 100px);
 }
 .clr {
   clear: both;
@@ -64,6 +77,16 @@ $ancor-footer-hover: #09888F;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.btn__anfi{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #484848;
+  margin: 0px;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 64px;
+  background: #00A699;
 }
 #footBorder{
 	border-top: 1px solid $color-footer;
