@@ -1,14 +1,19 @@
 /**
  * Created by vico on 13/12/16.
  */
-$(document).ready(function(){
-    //var authSearch = window.localStorage.getItem("search");
 
+var cargarPagina = function() {
+    if (navigator.geolocation) { 
+        // también se puede usar if ("geolocation" in navigator) {}
+        navigator.geolocation.getCurrentPosition(showResult, funcionError);
+    }
+};
 
+var funcionError = function (error) {
+    console.log(error);
+};
 
-    var result = {};
-
-    var contactTemplate ="<div class='row'>" +
+var contactTemplate ="<div class='row'>" +
         "<div class='col s10' >"+
         "<ul style='list-style-type:none'>"+
         "<li>{{distrito}}</li>"+
@@ -21,6 +26,13 @@ $(document).ready(function(){
         "</div>" +
         "</div>";
 
+
+var result = {};
+
+$(document).ready(function(){
+    //var authSearch = window.localStorage.getItem("search");
+    cargarPagina();
+
     var database = firebase.database();
 
     var departamentos = firebase.database().ref('search/');
@@ -30,19 +42,8 @@ $(document).ready(function(){
 
         var data = response.val();
         //console.log(data);
-        var la = $("#la");
-        var contenedorData = "";
-
-        $.each(data, function(key, user){
-            contenedorData += contactTemplate
-                .replace("{{distrito}}", user.distrito)
-                .replace("{{direccion}}", user.direccion)
-                .replace("{{tipo}}", user.tipo);
-            //.replace("{{email}}", key);
-            //console.log(key);
-        });
-
-        la.html(contenedorData);
+        result = data;
+        showResult();
 
     });
 
@@ -116,20 +117,7 @@ $(document).ready(function(){
         });
     }
 
-    function showResult(){
-        var la = $("#la");
-        var contenedorData = "";
-
-        $.each(result, function(key, user){
-            //console.log(user.tipo);
-            contenedorData += contactTemplate
-                .replace("{{distrito}}", user.distrito)
-                .replace("{{direccion}}", user.direccion)
-                .replace("{{tipo}}", user.tipo);
-        });
-
-        la.html(contenedorData);
-    }
+    
 
     function intersection(o1, o2) {
         return Object.keys(o1).concat(Object.keys(o2)).sort().reduce(function (r, a, i, aa) {
@@ -162,3 +150,41 @@ $(document).ready(function(){
     
 
 });
+
+function showResult(){
+        var la = $("#la");
+        var contenedorData = "";
+        console.log(result);
+
+
+        map = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 14,
+            center: new google.maps.LatLng(-12.079986982830766, -77.09998252678224),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        $.each(result, function(key, user){
+            //console.log(user.tipo);
+            contenedorData += contactTemplate
+                .replace("{{distrito}}", user.distrito)
+                .replace("{{direccion}}", user.direccion)
+                .replace("{{tipo}}", user.tipo);
+
+
+            //pintar markdores
+            var infowindow = new google.maps.InfoWindow();
+            marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(user.latitud, user.longitud),
+                  map: map
+                });
+                google.maps.event.addListener(marker, 'click', (function(marker, key) {
+                  return function() {
+                    infowindow.setContent(user.precio);
+                    infowindow.open(map, marker);
+                  }
+                })(marker, key));
+
+        });
+
+        la.html(contenedorData);
+    }

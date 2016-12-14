@@ -30,8 +30,8 @@ app.get('/liz', function (req, res) {
 
 // ACAAAAAAAAAAAAAAAAAA FIN*/
 
+var port = process.env.PORT || 3029;
 
-
-app.listen(3029 , function(){
+app.listen(port , function(){
   console.log("encendido");
 });
